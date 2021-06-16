@@ -1,4 +1,4 @@
-SRCS		= megaphone.cpp
+SRCS		= main.cpp
 
 OBJS		:=	$(SRCS:%.cpp=%.o)
 
@@ -6,14 +6,14 @@ CC			= clang++
 
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-NAME		= megaphone
+NAME		= phonebook
 
 all			: $(NAME)
 
 %.o			: %.cpp
 			  $(CC) -c $(CPPFLAGS) $< -o $@
 
-$(NAME)		: $(OBJS)
+$(NAME)		: $(OBJS) main.cpp
 			  $(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 clean		:
