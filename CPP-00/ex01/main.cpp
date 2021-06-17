@@ -6,27 +6,28 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 14:36:17 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/16 14:49:16 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/06/17 12:09:51 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstring>
+#include "phonebook.hpp"
 
-int	get_valid_input(void)
+std::string	get_valid_input(void)
 {
-	char	input[7];
+	std::string input;
 	
 	while (1)
 	{
-		std::cout << "Please enter your command: ADD, SEARCH or EXIT." << std::endl;
-		std::cin >> input;
-		if (strcmp(input, "ADD") == 0)
-			return (1);
-		else if (strcmp(input, "SEARCH") == 0)
-			return (2);
-		else if (strcmp(input, "EXIT") == 0)
-			return (3);
+		std::cout << "Please enter your command (ADD, SEARCH or EXIT) : ";
+		getline(std::cin, input);
+		if (input == "ADD")
+			return (input);
+		else if (input == "SEARCH")
+			return (input);
+		else if (input == "EXIT")
+			return (input);
 		else
 			std::cout << "Input not valid." << std::endl;
 	}
@@ -34,11 +35,31 @@ int	get_valid_input(void)
 
 int	main()
 {
-	int command;
+	Contact		phonebook[8];
+	std::string	command;
+	size_t		nb_contact;
 
-	command = get_valid_input();
-	std::cout << "Return: " << command << std::endl;
-	if (command == 3)
-		return (0);
+	command = "";
+	nb_contact = 0;
+	while (command != "EXIT")
+	{
+		command = get_valid_input();
+		if (command == "ADD")
+		{
+			if (nb_contact < 8)
+			{
+				phonebook[nb_contact].get_contact();
+				nb_contact++;
+			}
+			else
+				std::cout << "Can't add anymore contacts. Phonebook is full" << std::endl;
+		}
+		else if (command == "SEARCH")
+		{
+
+		}
+		else if (command == "EXIT")
+			break ;
+	}
 	return (0);
 }

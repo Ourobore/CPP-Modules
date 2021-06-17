@@ -1,6 +1,8 @@
-SRCS		= main.cpp
+SRCS		= Contact.cpp
 
 OBJS		:=	$(SRCS:%.cpp=%.o)
+
+INCLUDE		= -I .
 
 CC			= clang++
 
@@ -11,10 +13,10 @@ NAME		= phonebook
 all			: $(NAME)
 
 %.o			: %.cpp
-			  $(CC) -c $(CPPFLAGS) $< -o $@
+			  $(CC) -c $(CPPFLAGS) $(INCLUDE) $< -o $@
 
 $(NAME)		: $(OBJS) main.cpp
-			  $(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+			  $(CC) $(CPPFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
 
 clean		:
 		 	 rm -rf $(OBJS)
