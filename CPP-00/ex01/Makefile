@@ -1,4 +1,5 @@
-SRCS		= Contact.cpp
+SRCS		= main.cpp \
+			  Contact.cpp
 
 OBJS		:=	$(SRCS:%.cpp=%.o)
 
@@ -15,7 +16,7 @@ all			: $(NAME)
 %.o			: %.cpp
 			  $(CC) -c $(CPPFLAGS) $(INCLUDE) $< -o $@
 
-$(NAME)		: $(OBJS) main.cpp
+$(NAME)		: $(OBJS)
 			  $(CC) $(CPPFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
 
 clean		:

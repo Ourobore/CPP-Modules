@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 11:09:09 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/17 11:40:14 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/06/17 14:38:18 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define PHONEBOOK_H
 
 #include <iostream>
-#include <cstring>
+#include <iomanip>
+//#include <string>
 #include "Contact.hpp"
 
 #endif
