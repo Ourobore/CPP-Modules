@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 10:12:05 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/17 15:42:42 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/06/19 13:01:14 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ class Contact
 		std::string _underwear_color;
 		std::string _darkest_secret;
 
-		void	_print_info(std::string info);
+		void	_print_info(std::string info) const;
 
 	public:
 		void	add_contact(void);
-		void	print_contact(void);
-		void	display_summary(size_t index);
+		void	print_contact(void) const;
+		void	display_summary(size_t index) const;
 };
 
 #endif

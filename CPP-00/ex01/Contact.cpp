@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 10:12:00 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/17 15:42:51 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/06/19 13:00:54 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,9 @@ void	Contact::add_contact(void)
 	std::cout << "Contact added in the phonebook." << std::endl;
 }
 
-void	Contact::print_contact(void)
+void	Contact::print_contact(void) const
 {
+	std::cout << "This is the contact info." << std::endl;
 	std::cout << "First Name: " << this->_first_name << std::endl;
 	std::cout << "Last Name: " << this->_last_name << std::endl;
 	std::cout << "Nickname: " << this->_nickname << std::endl;
@@ -64,7 +65,7 @@ void	Contact::print_contact(void)
 	std::cout << "Darkest Secret: " << this->_darkest_secret << std::endl;
 }
 
-void	Contact::_print_info(std::string info)
+void	Contact::_print_info(std::string info) const
 {
 	if (info.length() > 9)
 		std::cout << info.substr(0, 9) << ".";
@@ -73,7 +74,7 @@ void	Contact::_print_info(std::string info)
 	std::cout << "|";
 }
 
-void	Contact::display_summary(size_t index)
+void	Contact::display_summary(size_t index) const
 {
 	std::cout << std::setw(10) << "[" << index + 1 << "]" << "|";
 	this->_print_info(this->_first_name);

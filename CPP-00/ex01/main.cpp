@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 14:36:17 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/17 15:48:40 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/06/19 12:51:24 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,43 +31,6 @@ std::string	get_valid_input(void)
 	}
 }
 
-void	command_add(Contact phonebook[8], size_t nb_contact)
-{
-	if (nb_contact < 8)
-	{
-		phonebook[nb_contact].add_contact();
-		nb_contact++;
-	}
-	else
-		std::cout << "Can't add anymore contacts. Phonebook is full." << std::endl;
-}
-
-void	command_search(Contact phonebook[8], size_t nb_contact)
-{
-	std::string	input;
-	size_t		index;
-
-	if (nb_contact == 0)
-		std::cout << "There is no contact in the phonebook." << std::endl;
-	else
-	{
-		for (size_t i = 0; i < nb_contact; i++)
-			phonebook[i].display_summary(i);
-		std::cout << "Select contact index: ";
-		getline(std::cin, input);
-		if (input.length() != 1)
-			std::cout << "Input is not valid." << std::endl;
-		else
-		{
-			index = (size_t)(input.at(0) - 48);
-			if (index < 1 || index > nb_contact)
-				std::cout << "Contact index is not valid." << std::endl;
-			else
-				phonebook[index - 1].print_contact();
-		}
-	}
-}
-
 int	main(void)
 {
 	Contact		phonebook[8];
@@ -80,9 +43,40 @@ int	main(void)
 	{
 		command = get_valid_input();
 		if (command == "ADD")
-			command_add(phonebook, nb_contact);
+		{
+			if (nb_contact < 8)
+			{
+				phonebook[nb_contact].add_contact();
+				nb_contact++;
+			}
+			else
+			std::cout << "Can't add anymore contacts. Phonebook is full." << std::endl;
+		}
 		else if (command == "SEARCH")
-			command_search(phonebook, nb_contact);
+		{
+			std::string	input;
+			size_t		index;
+
+			if (nb_contact == 0)
+				std::cout << "There is no contact in the phonebook." << std::endl;
+			else
+			{
+				for (size_t i = 0; i < nb_contact; i++)
+					phonebook[i].display_summary(i);
+				std::cout << "Select contact index: ";
+				getline(std::cin, input);
+				if (input.length() != 1)
+					std::cout << "Input is not valid." << std::endl;
+				else
+				{
+					index = (size_t)(input.at(0) - 48);
+					if (index < 1 || index > nb_contact)
+						std::cout << "Contact index is not valid." << std::endl;
+					else
+						phonebook[index - 1].print_contact();
+				}
+			}
+		}
 		else if (command == "EXIT")
 			break ;
 	}
