@@ -16,7 +16,7 @@ NAME		= phonebook
 all			: $(NAME)
 
 $(OBJS_DIR)%.o	: ./%.cpp
-				  $(CC) $(CPPFLAGS) $(INCLUDE) -c $< -o $@
+			  	  $(CC) $(CPPFLAGS) $(INCLUDE) -c $< -o $@
 
 $(NAME)		: $(OBJS_DIR) $(OBJS)
 			  $(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
