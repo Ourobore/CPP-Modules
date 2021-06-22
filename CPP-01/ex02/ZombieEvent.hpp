@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:28:24 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/22 14:23:19 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/06/22 14:49:59 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ class ZombieEvent
 
 	public:
 		void	setZombieType(std::string type);
-		Zombie	*newZombie(std::string name);
+		Zombie	*newZombie(std::string name) const;
+		void	randomChump(void) const;
 };
 
 #endif

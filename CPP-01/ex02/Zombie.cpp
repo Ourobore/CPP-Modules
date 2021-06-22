@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:28:28 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/22 14:32:27 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/06/22 15:03:39 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Zombie::Zombie(std::string name, std::string type) : _name(name), _type(type)
 {
-	this->_announce();
 }
 
 Zombie::~Zombie(void)
@@ -22,7 +21,7 @@ Zombie::~Zombie(void)
 	std::cout << this->_getNameType() << "Nooo, I don't wanna die agaiiin!" << std::endl;
 }
 
-void	Zombie::_announce(void) const
+void	Zombie::announce(void) const
 {
 	std::cout << this->_getNameType() << " " << this->_getPunchline() << std::endl;
 }
