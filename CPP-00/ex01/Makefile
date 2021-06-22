@@ -1,5 +1,5 @@
 SRCS		= main.cpp \
-			  Pony.cpp
+			  Contact.cpp
 
 OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
