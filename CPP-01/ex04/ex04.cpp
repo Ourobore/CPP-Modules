@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/24 11:08:03 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/24 13:15:00 by lchapren         ###   ########.fr       */
+/*   Created: 2021/06/24 13:17:50 by lchapren          #+#    #+#             */
+/*   Updated: 2021/06/24 13:24:09 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "brainz.hpp"
+#include <iostream>
 
-int main(void)
+int main()
 {
-	srand(time(NULL));
+	std::string	s = "HI THIS IS BRAIN";
+	std::string	*p = &s;
+	std::string	&ref = s;
 
-	ZombieHorde horde(5);
+	std::cout << "String: " << s << std::endl;
+	std::cout << "Pointer: " << *p << std::endl;
+	std::cout << "Reference: " << ref << std::endl;
 }
