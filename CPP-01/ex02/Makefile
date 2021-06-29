@@ -1,4 +1,4 @@
-SRCS		= ex04.cpp 
+SRCS		= ex02.cpp 
 
 OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 

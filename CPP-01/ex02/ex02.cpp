@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   ex02.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 13:17:50 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/24 13:24:09 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/06/29 11:55:23 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int main()
 {
-	std::string	s = "HI THIS IS BRAIN";
-	std::string	*p = &s;
-	std::string	&ref = s;
+	std::string		string = "HI THIS IS BRAIN";
+	std::string*	stringPTR = &string;
+	std::string&	stringREF = string;
 
-	std::cout << "String: " << s << std::endl;
-	std::cout << "Pointer: " << *p << std::endl;
-	std::cout << "Reference: " << ref << std::endl;
+	std::cout << "String: " << string << std::endl;
+	std::cout << "Pointer: " << *stringPTR << std::endl;
+	std::cout << "Reference: " << stringREF << std::endl;
 }
