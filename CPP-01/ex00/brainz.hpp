@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   brainz.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 13:28:24 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/22 14:49:59 by lchapren         ###   ########.fr       */
+/*   Created: 2021/06/22 13:28:26 by lchapren          #+#    #+#             */
+/*   Updated: 2021/06/29 11:04:27 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-# define ZOMBIEEVENT_HPP
+#ifndef BRAINZ_HPP
+# define BRAINZ_HPP
 
-#include "brainz.hpp"
+# include <iostream>
+# include <string>
+# include <cstdlib>
+# include <ctime>
+# include "Zombie.hpp"
 
-class ZombieEvent
-{
-	private:
-		std::string	_type;
-
-	public:
-		void	setZombieType(std::string type);
-		Zombie	*newZombie(std::string name) const;
-		void	randomChump(void) const;
-};
+Zombie* newZombie(std::string name);
+void    randomChump(std::string name);
 
 #endif

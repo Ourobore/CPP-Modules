@@ -19,15 +19,15 @@ class Zombie
 {
 	private:
 		std::string	_name;
-		std::string	_type;
 		
-		std::string	_getNameType(void) const;
+		std::string	_getNameplate(void) const;
 		std::string	_getPunchline(void) const;
 
 	public:
-		Zombie(std::string name, std::string type);
+		Zombie(std::string name);
 		~Zombie(void);
-		void	announce(void) const;
+
+		void		announce(void) const;
 };
 
 #endif

@@ -1,5 +1,7 @@
 SRCS		= main.cpp \
-			  Pony.cpp
+			  Zombie.cpp \
+			  newZombie.cpp \
+			  randomChump.cpp
 
 OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
@@ -11,7 +13,7 @@ CC			= clang++
 
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-NAME		= pony
+NAME		= brainz
 
 all			: $(NAME)
 

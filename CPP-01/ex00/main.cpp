@@ -3,49 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 10:35:41 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/22 11:35:51 by lchapren         ###   ########.fr       */
+/*   Created: 2021/06/22 13:28:25 by lchapren          #+#    #+#             */
+/*   Updated: 2021/06/29 11:09:41 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.hpp"
+#include "brainz.hpp"
 
-void	ponyOnTheStack(void)
+std::string	randomName(void)
 {
-	Pony	pony_stack("Jacob", "Shetland", 120, 200);
-	
-	pony_stack.printPony();
+	std::string	name[3] = 
+						{
+							"Jessy",
+							"James",
+							"Meowth"
+						};
+
+	return (name[std::rand() % 3]);
 }
 
-void	ponyOnTheHeap(void)
+int main(void)
 {
-	Pony	*pony_heap = new Pony("Paquerette", "Connemara", 160, 320);
+	srand(time(NULL));
+
+	//Zombie created with his constructor
+	Zombie stackZombie("Jimmy");
+	stackZombie.announce();
+	std::cout << std::endl;
+
+	//Zombie created via event
+	Zombie*	heapZombie;
+	heapZombie = newZombie("Heapy");
+	heapZombie->announce();
+	std::cout << std::endl;
+
+	//Random zombie via event method
+	randomChump(randomName());
+	std::cout << std::endl;
 	
-	pony_heap->printPony();
-
-	delete pony_heap;
-}
-
-int	main(void)
-{
-	Pony	pony_stack_main("Crimson", "Falabella", 60, 35);
-	Pony	*pony_heap_main = new Pony("Isabella", "Welsh", 140, 280);
-
-	std::cout << std::endl;
-	std::cout << "### Stack (in main) ###" << std::endl;
-	pony_stack_main.printPony();
-	std::cout << std::endl;
-	std::cout << "### Heap (in main) ###" << std::endl;
-	pony_heap_main->printPony();
-	std::cout << std::endl;
-	std::cout << "### Stack (in function) ###" << std::endl;
-	ponyOnTheStack();
-	std::cout << std::endl;
-	std::cout << "### Heap (in function) ###" << std::endl;
-	ponyOnTheHeap();
-	std::cout << std::endl;
-	delete pony_heap_main;
-	return (0);
+	delete heapZombie;
 }

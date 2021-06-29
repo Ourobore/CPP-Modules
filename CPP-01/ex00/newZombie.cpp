@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   brainz.hpp                                         :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 13:28:26 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/22 14:19:56 by lchapren         ###   ########.fr       */
+/*   Created: 2021/06/29 10:56:18 by user42            #+#    #+#             */
+/*   Updated: 2021/06/29 10:58:24 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAINZ_HPP
-# define BRAINZ_HPP
+#include "brainz.hpp"
 
-# include <iostream>
-# include <string>
-# include <cstdlib>
-# include <ctime>
-# include "Zombie.hpp"
-# include "ZombieEvent.hpp"
+Zombie* newZombie(std::string name)
+{
+    Zombie* newZombie = new Zombie(name);
 
-#endif
+    return (newZombie);
+}
