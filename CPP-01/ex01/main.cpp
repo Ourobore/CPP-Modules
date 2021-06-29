@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 11:08:03 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/29 11:44:13 by user42           ###   ########.fr       */
+/*   Updated: 2021/06/29 11:50:59 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main(void)
 	Zombie*	horde;
 	int		N = 5;
 
-	horde = zombieHorde(N);
+	horde = zombieHorde(N, "Gerard");
 	for (int i = 0; i < N; i++)
 		horde[i].announce();
 	std::cout << std::endl;
