@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:28:25 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/29 11:13:19 by user42           ###   ########.fr       */
+/*   Updated: 2021/06/29 11:38:15 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 std::string	randomName(void)
 {
-	std::string	name[3] = 
+	std::string	name[5] = 
 						{
 							"Jessy",
 							"James",
-							"Meowth"
+							"Meowth",
+							"Wobbuffet",
+							"Bellsprout"
 						};
 
-	return (name[std::rand() % 3]);
+	return (name[std::rand() % 5]);
 }
 
 int main(void)

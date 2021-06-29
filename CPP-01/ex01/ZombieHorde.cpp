@@ -3,39 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 11:09:27 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/24 12:01:34 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/06/29 11:33:18 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "brainz.hpp"
 
-ZombieHorde::ZombieHorde(size_t nb_zombie) : _nb_zombie(nb_zombie)
+Zombie*	zombieHorde(int N)
 {
-	Zombie	*horde = new Zombie[_nb_zombie];
+	Zombie*	horde = new Zombie[N];
 
-	for (size_t i = 0; i < _nb_zombie; i++)
+	for (int i = 0; i < N; i++)
 	{
-		horde[i].setRandomName();
-		horde[i].setRandomType();
+		horde[i].setName(randomName());
 		horde[i].announce();
 	}
-	this->setHorde(horde);
-}
-
-ZombieHorde::~ZombieHorde(void)
-{
-	delete [] this->getHorde();
-}
-
-Zombie*	ZombieHorde::getHorde(void) const
-{
-	return (this->_horde);
-}
-
-void	ZombieHorde::setHorde(Zombie *horde)
-{
-	this->_horde = horde;
+	return (horde);
 }
