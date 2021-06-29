@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 11:08:03 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/29 11:38:19 by user42           ###   ########.fr       */
+/*   Updated: 2021/06/29 11:40:53 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int main(void)
 
 	Zombie*	horde;
 	horde = zombieHorde(5);
+	std::cout << std::endl;
 	delete [] horde;
 }
