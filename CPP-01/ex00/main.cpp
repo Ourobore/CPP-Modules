@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:28:25 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/29 11:09:41 by user42           ###   ########.fr       */
+/*   Updated: 2021/06/29 11:13:19 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ int main(void)
 	stackZombie.announce();
 	std::cout << std::endl;
 
-	//Zombie created via event
+	//Zombie created and returned via newZombie() function
 	Zombie*	heapZombie;
 	heapZombie = newZombie("Heapy");
 	heapZombie->announce();
 	std::cout << std::endl;
 
-	//Random zombie via event method
+	//Random zombie via randomChump() function
 	randomChump(randomName());
 	std::cout << std::endl;
 	
