@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 09:11:54 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/30 10:48:21 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/06/30 11:11:25 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,9 @@ int	main(int argc, char *argv[])
 	while (getline(ifs, buffer))
 	{
 		buffer = replace(buffer, toFind, toReplace);
-		ofs << buffer << std::endl;
+		ofs << buffer;
+		if (ifs.peek() != EOF)
+			ofs << std::endl;
 	}
 
 	ifs.close();
