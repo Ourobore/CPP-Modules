@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 11:28:29 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/30 11:28:42 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/06/30 13:36:02 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,18 @@
 
 int main()
 {
+	Karen K;
+
+	K.complain("DEBUG");
+	std::cout << std::endl;
+
+	K.complain("INFO");
+	std::cout << std::endl;
 	
+	K.complain("WARNING");
+	std::cout << std::endl;
+	
+	K.complain("ERROR");
+
+	K.complain("Just some gibberish");
 }

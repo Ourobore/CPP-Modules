@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 11:23:48 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/30 12:29:01 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/06/30 13:28:45 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,31 @@ void	Karen::_error(void) const
 
 void	Karen::complain(std::string level) const
 {
-	/*
-	typedef void (*f) (void);
+	std::string functionName[] = 
+								{
+									"DEBUG",
+									"INFO",
+									"WARNING",
+									"ERROR"
+								};
+	
+	typedef void (Karen::*functionPointer) (void) const;
 
-	static f fTab[] = 	{
-						this->_debug(),
-						this->_
+	functionPointer functionTab[] = 
+									{
+										&Karen::_debug,
+										&Karen::_info,
+										&Karen::_warning,
+										&Karen::_error,
+									};
+
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (level == functionName[i])
+		{
+			functionPointer f = functionTab[i];
+			(this->*f)();
+			return ;
+		}
 	}
-	f[0] = this->_debug();
-	f[1] = this->_info();
-	f[2] = this->_warning();
-	f[3] = this->_error();
-	*/
-
-	void (*f[]) (void) = {this->_debug};
 }
