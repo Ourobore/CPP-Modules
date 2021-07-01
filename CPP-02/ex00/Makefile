@@ -1,5 +1,5 @@
 SRCS		= main.cpp \
-			  Karen.cpp
+			  Fixed.cpp
 
 OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
@@ -11,7 +11,7 @@ CC			= clang++
 
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-NAME		= karen
+NAME		= raw
 
 all			: $(NAME)
 

@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   number.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/30 11:28:29 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/30 14:08:08 by lchapren         ###   ########.fr       */
+/*   Created: 2021/07/01 12:57:23 by lchapren          #+#    #+#             */
+/*   Updated: 2021/07/01 13:22:02 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "complain.hpp"
+#ifndef NUMBER_HPP
+# define NUMBER_HPP
 
-int main()
-{
-	Karen K;
+# include <iostream>
+# include "Fixed.hpp"
 
-	K.complain("DEBUG");
-	std::cout << std::endl;
-
-	K.complain("INFO");
-	std::cout << std::endl;
-	
-	K.complain("WARNING");
-	std::cout << std::endl;
-	
-	K.complain("ERROR");
-
-	K.complain("Just some gibberish");
-}
+#endif

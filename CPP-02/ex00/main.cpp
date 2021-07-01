@@ -5,27 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/30 11:28:29 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/30 14:08:08 by lchapren         ###   ########.fr       */
+/*   Created: 2021/07/01 12:57:09 by lchapren          #+#    #+#             */
+/*   Updated: 2021/07/01 13:44:10 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "complain.hpp"
+#include "number.hpp"
 
-int main()
+int main(void)
 {
-	Karen K;
-
-	K.complain("DEBUG");
-	std::cout << std::endl;
-
-	K.complain("INFO");
-	std::cout << std::endl;
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
+	c = b;
 	
-	K.complain("WARNING");
-	std::cout << std::endl;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 	
-	K.complain("ERROR");
+	//a.setRawBits(42);
+	//std::cout << a.getRawBits() << std::endl;
 
-	K.complain("Just some gibberish");
+	return 0;
 }

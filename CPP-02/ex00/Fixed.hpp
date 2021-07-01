@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/30 11:28:29 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/30 14:08:08 by lchapren         ###   ########.fr       */
+/*   Created: 2021/07/01 12:57:05 by lchapren          #+#    #+#             */
+/*   Updated: 2021/07/01 13:43:35 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "complain.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-int main()
+# include "number.hpp"
+
+class Fixed
 {
-	Karen K;
-
-	K.complain("DEBUG");
-	std::cout << std::endl;
-
-	K.complain("INFO");
-	std::cout << std::endl;
+	private:
+		int					_value;
+		static int const	_nbBits = 8;
 	
-	K.complain("WARNING");
-	std::cout << std::endl;
-	
-	K.complain("ERROR");
+	public:
+		Fixed(void);
+		~Fixed(void);
+		Fixed(Fixed const &copy);
+		
+		Fixed&	operator=(Fixed const &src);
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+};
 
-	K.complain("Just some gibberish");
-}
+#endif
