@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:01 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/01 13:41:42 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/02 10:11:16 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Fixed&	Fixed::operator=(Fixed const &src)
 {
 	//std::cout << "Assignation operator called" << std::endl;
 	if (this != &src)
-		this->_value = src.getRawBits();
+		this->getRawBits(src.getRawBits());
 
 	return (*this);
 }
