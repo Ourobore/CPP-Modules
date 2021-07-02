@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 09:11:54 by lchapren          #+#    #+#             */
-/*   Updated: 2021/06/30 11:15:15 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/02 15:30:38 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ int	main(int argc, char *argv[])
 	// Fstream error management
 	std::string		inFilename = argv[1];
 	std::string		outFilename = toUpper(inFilename) + ".replace";
-	std::ifstream 	ifs(inFilename);
-	std::ofstream	ofs(outFilename);
+	std::ifstream 	ifs(inFilename.c_str());
+	std::ofstream	ofs(outFilename.c_str());
 	
 	if (ifs.fail() || ofs.fail())
 	{
