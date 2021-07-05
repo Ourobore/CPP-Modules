@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:09 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/05 14:28:36 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/05 14:56:07 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main()
 	// Increment and decrement overload tests
 	Fixed	a(0);
 	
-	std::cout << "Increment and decrement tests" << std::endl;
+	std::cout << "Increment and decrement operators tests" << std::endl;
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
@@ -27,9 +27,20 @@ int	main()
 	std::cout << std::endl;
 	
 	// Min max tests
+	std::cout << "Min and max operators tests" << std::endl;
 	Fixed const	b(Fixed(5.05f) * Fixed(2));
 
 	std::cout << b << std::endl;
+	std::cout << Fixed::max(a, b) << std::endl;
+	std::cout << Fixed::min(a, b) << std::endl;
+	std::cout << Fixed::max(Fixed(-3), Fixed(42)) << std::endl;
+	std::cout << Fixed::min(Fixed(0.0f), Fixed(32.56f)) << std::endl;
+	std::cout << Fixed::max(Fixed(-7.32f), Fixed(7)) << std::endl;
+	std::cout << Fixed::min(Fixed(53.41f), Fixed(54)) << std::endl;
+
+	Fixed const	i(42);
+	Fixed const	j(63.7f);
+	std::cout << Fixed::max(i, j) << std::endl;
 	
 	std::cout << std::endl;
 
@@ -37,7 +48,7 @@ int	main()
 	Fixed	x(5);
 	Fixed	y(3);
 
-	std::cout << "Comparisons tests" << std::endl;
+	std::cout << "Comparisons operators tests" << std::endl;
 	std::cout << "x: " << x.toFloat() << " | y: " << y.toFloat() << std::endl;
 	if (x < y)
 		std::cout << "x is inferior to y y" << std::endl;
@@ -75,7 +86,7 @@ int	main()
 	int		n1 = 3;
 	int		n2 = 6;
 
-	std::cout << "Assignation tests" << std::endl;
+	std::cout << "Assignation operators tests" << std::endl;
 	Fixed	resultConstructPlus(Fixed(n1) + Fixed(n2));
 	Fixed	Plus1(n1);
 	Fixed	Plus2(n2);
