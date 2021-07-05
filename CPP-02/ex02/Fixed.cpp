@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:01 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/05 11:14:16 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/05 11:36:52 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,14 @@ Fixed&	Fixed::operator-(Fixed const &src)
 Fixed&	Fixed::operator*(Fixed const &src)
 {
 	std::cout << "Multipcation operator called" << std::endl;
-	this->setRawBits(this->getRawBits() * src.getRawBits());
+	this->setRawBits(this->getRawBits() * (src.getRawBits() / (1 << 8)));
 	return (*this);
 }
 
 Fixed&	Fixed::operator/(Fixed const &src)
 {
 	std::cout << "Division operator called" << std::endl;
-	this->setRawBits(this->getRawBits() / src.getRawBits());
+	this->setRawBits(this->getRawBits() / (src.getRawBits() / (1 << 8)));
 	return (*this);
 }
 

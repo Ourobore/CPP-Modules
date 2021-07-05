@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:09 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/05 11:19:45 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/05 11:37:27 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int	main()
 	std::cout << std::endl;
 
 	//Assignation operators
-	int		n1 = 1;
-	int		n2 = 2;
+	int		n1 = 3;
+	int		n2 = 6;
 
 	Fixed	resultConstructPlus(Fixed(n1) + Fixed(n2));
 	Fixed	Plus1(n1);
