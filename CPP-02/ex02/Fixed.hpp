@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:05 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/05 10:35:32 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/05 14:00:14 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ class Fixed
 		bool	operator<=(Fixed const &comp) const;
 		bool	operator==(Fixed const &comp) const;
 		bool	operator!=(Fixed const &comp) const;
+
+		Fixed	operator++();
+		Fixed	operator++(int);
+		Fixed	operator--();
+		Fixed	operator--(int);
 
 		int		toInt(void) const;
 		float	toFloat(void) const;
