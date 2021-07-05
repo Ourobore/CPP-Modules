@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:01 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/02 10:51:34 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/05 09:46:02 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		Fixed::toInt(void) const
 
 float		Fixed::toFloat(void) const
 {
-	//std::cout << "toInt() function called" << std::endl;
+	//std::cout << "toFloat() function called" << std::endl;
 	return ((float)this->getRawBits() / (1 << this->_nbBits));
 }
 

@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:01 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/02 10:11:16 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/05 09:46:46 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 Fixed::Fixed(void) : _value(0)
 {
-	//std::cout << "Default constructor called" << std::endl;
-}
-
-Fixed::~Fixed(void)
-{
-	//std::cout << "Destructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const &copy)
 {
-	//std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
 Fixed&	Fixed::operator=(Fixed const &src)
 {
-	//std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Assignation operator called" << std::endl;
 	if (this != &src)
 		this->getRawBits(src.getRawBits());
 
 	return (*this);
+}
+
+Fixed::~Fixed(void)
+{
+	std::cout << "Destructor called" << std::endl;
 }
 
 int		Fixed::getRawBits(void) const
