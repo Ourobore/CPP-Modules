@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:01 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/06 14:45:57 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/06 15:29:14 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,25 +53,25 @@ Fixed&	Fixed::operator=(Fixed const &src)
 	return (*this);
 }
 
-Fixed	Fixed::operator+(Fixed const &src)
+Fixed	Fixed::operator+(Fixed const &src) const
 {
 	//std::cout << "Sum operator called" << std::endl;
 	return Fixed(this->toFloat() + src.toFloat());
 }
 
-Fixed	Fixed::operator-(Fixed const &src)
+Fixed	Fixed::operator-(Fixed const &src) const
 {
 	//std::cout << "Difference operator called" << std::endl;
 	return Fixed(this->toFloat() - src.toFloat());
 }
 
-Fixed	Fixed::operator*(Fixed const &src)
+Fixed	Fixed::operator*(Fixed const &src) const
 {
 	//std::cout << "Multipcation operator called" << std::endl;
 	return Fixed(this->toFloat() * src.toFloat());
 }
 
-Fixed	Fixed::operator/(Fixed const &src)
+Fixed	Fixed::operator/(Fixed const &src) const
 {
 	//std::cout << "Division operator called" << std::endl;
 	return Fixed(this->toFloat() / src.toFloat());

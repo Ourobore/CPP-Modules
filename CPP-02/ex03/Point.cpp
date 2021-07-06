@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 15:07:15 by user42            #+#    #+#             */
-/*   Updated: 2021/07/05 18:52:19 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/06 16:31:32 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ Point&  Point::operator=(Point const &src)
     return (*this);
 }
 
-Fixed const Point::getCoordX(void) const
+Fixed const	Point::getCoordX(void) const
 {
     return (this->_x);
 }
 
-Fixed const Point::getCoordY(void) const
+Fixed const	Point::getCoordY(void) const
 {
     return (this->_y);
 }

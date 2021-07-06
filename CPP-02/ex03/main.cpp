@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:09 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/05 19:17:48 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/06 16:16:32 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 int	main()
 {
-	Point	p(0, 4);
-	Point	a;
-	Point	c(4, 0);
-	Point	verif(1, 1);
+	Point const	p(1, 4);
+	Point const a;
+	Point const	c(45, 3);
+	Point const	verif(50.5f, 50.5f);
 
 	std::cout << p << std::endl;
-	//std::cout << a << std::endl;
-	std::cout << p.getCoordX() << std::endl;
-	std::cout << p.getCoordY() << std::endl;
-	std::cout << a.getCoordX() << std::endl;
-	std::cout << a.getCoordY() << std::endl;
+	std::cout << a << std::endl;
+	std::cout << c << std::endl;
+	std::cout << verif << std::endl;
+	
 	std::cout << std::endl;
 	std::cout << bsp(p, a, c, verif) << std::endl;
 }
