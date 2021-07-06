@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:01 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/05 14:49:52 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/06 14:45:57 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,33 +53,30 @@ Fixed&	Fixed::operator=(Fixed const &src)
 	return (*this);
 }
 
-Fixed&	Fixed::operator+(Fixed const &src)
+Fixed	Fixed::operator+(Fixed const &src)
 {
 	//std::cout << "Sum operator called" << std::endl;
-	this->setRawBits(this->getRawBits() + src.getRawBits());
-	return (*this);
+	return Fixed(this->toFloat() + src.toFloat());
 }
 
-Fixed&	Fixed::operator-(Fixed const &src)
+Fixed	Fixed::operator-(Fixed const &src)
 {
 	//std::cout << "Difference operator called" << std::endl;
-	this->setRawBits(this->getRawBits() - src.getRawBits());
-	return (*this);
+	return Fixed(this->toFloat() - src.toFloat());
 }
 
-Fixed&	Fixed::operator*(Fixed const &src)
+Fixed	Fixed::operator*(Fixed const &src)
 {
 	//std::cout << "Multipcation operator called" << std::endl;
-	this->setRawBits(this->getRawBits() * (src.getRawBits() >> this->_nbBits));
-	return (*this);
+	return Fixed(this->toFloat() * src.toFloat());
 }
 
-Fixed&	Fixed::operator/(Fixed const &src)
+Fixed	Fixed::operator/(Fixed const &src)
 {
 	//std::cout << "Division operator called" << std::endl;
-	this->setRawBits(this->getRawBits() / (src.getRawBits() >> this->_nbBits));
-	return (*this);
+	return Fixed(this->toFloat() / src.toFloat());
 }
+
 
 //
 // Comparison operators overload

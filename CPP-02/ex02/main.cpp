@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:09 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/05 14:56:07 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/06 14:44:05 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,26 +88,18 @@ int	main()
 
 	std::cout << "Assignation operators tests" << std::endl;
 	Fixed	resultConstructPlus(Fixed(n1) + Fixed(n2));
-	Fixed	Plus1(n1);
-	Fixed	Plus2(n2);
-	std::cout << "resultPlus: " << Plus1 + Plus2 << std::endl;
+	std::cout << "resultPlus: " << Fixed(n1) + Fixed(n2) << std::endl;
 	std::cout << "resultConstructPlus: " << resultConstructPlus << std::endl;
 
 	Fixed	resultConstructMinus(Fixed(n1) - Fixed(n2));
-	Fixed	Minus1(n1);
-	Fixed	Minus2(n2);
-	std::cout << "resultMinus: " << Minus1 - Minus2 << std::endl;
+	std::cout << "resultMinus: " << Fixed(n1) - Fixed(n2) << std::endl;
 	std::cout << "resultConstructMinus: " << resultConstructMinus << std::endl;
 
 	Fixed	resultConstructMult(Fixed(n1) * Fixed(n2));
-	Fixed	Mult1(n1);
-	Fixed	Mult2(n2);
-	std::cout << "resultMult: " << Mult1 * Mult2 << std::endl;
+	std::cout << "resultMult: " << Fixed(n1) * Fixed(n2)<< std::endl;
 	std::cout << "resultConstructMult: " << resultConstructMult << std::endl;
 
 	Fixed	resultConstructDiv(Fixed(n1) / Fixed(n2));
-	Fixed	Div1(n1);
-	Fixed	Div2(n2);
-	std::cout << "resultDiv: " << Div1 / Div2 << std::endl;
+	std::cout << "resultDiv: " << Fixed(n1) / Fixed(n2) << std::endl;
 	std::cout << "resultConstructDiv: " << resultConstructDiv << std::endl;
 }
