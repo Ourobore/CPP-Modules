@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:05 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/06 15:29:01 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/06 21:43:18 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ class Fixed
 		float	toFloat(void) const;
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
+		void	setAbs(void);
 };
 
 std::ostream&	operator<<(std::ostream &o, Fixed const &src);

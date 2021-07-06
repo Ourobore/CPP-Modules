@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 15:07:15 by user42            #+#    #+#             */
-/*   Updated: 2021/07/06 16:31:32 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/06 21:26:45 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ Point::Point(float const x, float const y) : _x(Fixed(x)), _y(Fixed(y))
     //std::cout << "Float constructor called" << std::endl;
 }
 
-Point::Point(Point const &P)
+Point::Point(Point const &P) : _x(P._x), _y(P._y)
 {
     //std::cout << "Copy constructor called" << std::endl;
-    *this = P;
+    //*this = P;
 }
 
 Point::~Point(void)

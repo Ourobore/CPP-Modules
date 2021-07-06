@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:01 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/06 15:29:14 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/06 21:46:33 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,6 +215,12 @@ void	Fixed::setRawBits(int raw)
 {
 	//std::cout << "setRawBits() function called" << std::endl;
 	this->_value = raw;
+}
+
+void	Fixed::setAbs(void)
+{
+	if (this->getRawBits() < 0)
+		this->setRawBits(this->getRawBits() * -1);
 }
 
 std::ostream& operator<<(std::ostream &o, Fixed const &src)

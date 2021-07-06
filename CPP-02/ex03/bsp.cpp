@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 15:07:59 by user42            #+#    #+#             */
-/*   Updated: 2021/07/06 15:59:07 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/06 21:47:06 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point)
 	std::cout << pbc << std::endl;
 	std::cout << pac << std::endl;
 
-	if (A == pab + pbc + pac)
-		return (true);
-	else
-		return (false);
+	A.setAbs();
+	pab.setAbs();
+	pbc.setAbs();
+	pac.setAbs();
 	
 	return (A == pab + pbc + pac);
 }

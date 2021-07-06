@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:09 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/06 16:16:32 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/06 21:48:17 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main()
 	Point const	p(1, 4);
 	Point const a;
 	Point const	c(45, 3);
-	Point const	verif(50.5f, 50.5f);
+	Point const	verif(1, 4);
 
 	std::cout << p << std::endl;
 	std::cout << a << std::endl;
