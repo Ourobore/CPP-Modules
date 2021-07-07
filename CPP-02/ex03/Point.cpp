@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 15:07:15 by user42            #+#    #+#             */
-/*   Updated: 2021/07/06 21:26:45 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/07 10:41:04 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Point::Point(float const x, float const y) : _x(Fixed(x)), _y(Fixed(y))
 Point::Point(Point const &P) : _x(P._x), _y(P._y)
 {
     //std::cout << "Copy constructor called" << std::endl;
-    //*this = P;
 }
 
 Point::~Point(void)
@@ -33,7 +32,7 @@ Point::~Point(void)
     //std::cout << "Destructor called" << std::endl;
 }
 
-Point&  Point::operator=(Point const &src)
+Point&	Point::operator=(Point const &src)
 {
     // Can't implement it, can't assign to a const variable or drop const qualifier
     
@@ -52,6 +51,19 @@ Fixed const	Point::getCoordX(void) const
 Fixed const	Point::getCoordY(void) const
 {
     return (this->_y);
+}
+
+Fixed const	Point::getDistance(Point const &P) const
+{
+	float		distanceFloat = sqrt(pow(this->getCoordX().toFloat() - P.getCoordX().toFloat(), 2) \
+								+ pow(this->getCoordY().toFloat() - P.getCoordY().toFloat(), 2));
+	Fixed const distance(distanceFloat);
+	return (distance);
+}
+
+bool		Point::isOnLine(Point const &A, Point const &B) const
+{
+	return (this->getDistance(A) + this->getDistance(B) == A.getDistance(B));
 }
 
 std::ostream&   operator<<(std::ostream &o, Point const &src)
