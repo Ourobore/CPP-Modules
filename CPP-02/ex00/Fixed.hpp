@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:05 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/02 10:11:01 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/07 10:45:09 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 	private:
 		int					_value;
-		static int const	_nbBits = 8;
+		static int const	_nbBits;
 	
 	public:
 		Fixed(void);

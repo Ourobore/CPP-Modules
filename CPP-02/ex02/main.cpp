@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:57:09 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/06 14:44:05 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/07 10:52:31 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main()
 	Fixed	y(3);
 
 	std::cout << "Comparisons operators tests" << std::endl;
-	std::cout << "x: " << x.toFloat() << " | y: " << y.toFloat() << std::endl;
+	std::cout << "x: " << x << " | y: " << y << std::endl;
 	if (x < y)
 		std::cout << "x is inferior to y y" << std::endl;
 	else
