@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 14:12:41 by user42            #+#    #+#             */
-/*   Updated: 2021/07/07 15:31:20 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/07 20:55:45 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ ClapTrap::ClapTrap(ClapTrap const &rhs)
 
 ClapTrap& ClapTrap::operator=(ClapTrap const &rhs)
 {
+	std::cout << "<" << this->getName() << "> Why am I becoming like him?!" << std::endl;
 	if (this != &rhs)
 	{
 		this->setName(rhs.getName());

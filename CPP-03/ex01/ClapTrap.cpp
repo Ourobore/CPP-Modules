@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 14:12:41 by user42            #+#    #+#             */
-/*   Updated: 2021/07/07 17:02:01 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/07 21:13:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,23 @@
 
 ClapTrap::ClapTrap(void) : _name("NoName"), _hitPoints(0), _energyPoints(0), _atkDamage(0)
 {
-	std::cout << "I have nothing special..." << std::endl;
+	std::cout << "<" << this->getName() << "> I have nothing special..." << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _atkDamage(0)
 {
-	std::cout << "Well, fresh from the factory!" << std::endl;
+	std::cout << "<" << this->getName() << "> Well, fresh from the factory!" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name, unsigned int hitPoints, unsigned int energyPoints, unsigned int atkDamage) \
+: _name(name), _hitPoints(hitPoints), _energyPoints(energyPoints), _atkDamage(atkDamage)
+{
+	std::cout << "<" << this->getName() << "> Well, fresh from the factory!" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &rhs)
 {
-	std::cout << "Am I their sibling?" << std::endl;
+	std::cout << "<" << this->getName() << "> Am I their sibling?" << std::endl;
 	*this = rhs;
 }
 
@@ -37,12 +43,13 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &rhs)
 		this->setEnergyPoints(rhs.getEnergyPoints());
 		this->setAtkDamage(rhs.getAtkDamage());
 	}
+	std::cout << "<" << this->getName() << "> Why am I becoming like him?!" << std::endl;
 	return (*this);
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Bye Bye!" << std::endl;
+	std::cout << "<" << this->getName() << "> Bye Bye!" << std::endl;
 }
 
 void	ClapTrap::attack(std::string const &target) const

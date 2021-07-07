@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:55:45 by user42            #+#    #+#             */
-/*   Updated: 2021/07/07 17:08:42 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/07 21:17:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ class ScavTrap : public ClapTrap
 		ScavTrap&	operator=(ScavTrap const &rhs);
 		~ScavTrap(void);
 
-		void	guardGuate(void) const;
+		void	attack(std::string const &target) const;
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+		
+		void	guardGate(void) const;
 };
 
 std::ostream& operator<<(std::ostream &o, ClapTrap const &rhs);

@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 14:12:09 by user42            #+#    #+#             */
-/*   Updated: 2021/07/07 15:55:29 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/07 20:41:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class ClapTrap
 	public:
 		ClapTrap(void);
 		ClapTrap(std::string name);
+		ClapTrap(std::string name, unsigned int hitPoints, \
+				unsigned int energyPoints, unsigned int atkDamage);
 		ClapTrap(ClapTrap const &rhs);
 		ClapTrap& operator=(ClapTrap const &rhs);
 		~ClapTrap(void);

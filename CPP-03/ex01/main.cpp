@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 14:11:30 by user42            #+#    #+#             */
-/*   Updated: 2021/07/07 17:09:54 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/07 21:19:59 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ int	main(void)
 	std::cout << none << std::endl;
 	std::cout << numberOne << std::endl;
 
-
 	std::cout << std::endl;
-
 
 	ClapTrap	a;
 	ClapTrap	b("Jimmy");
@@ -40,11 +38,26 @@ int	main(void)
 	std::cout << b << std::endl;
 
 	std::cout << std::endl;
+	std::cout << "#####################Ex01#######################" << std::endl;
 	std::cout << std::endl;
 
 	ScavTrap i;
 	ScavTrap j("Bobby");
+	ScavTrap k("Greg");
+	ScavTrap c(j);
 
 	std::cout << i << std::endl;
 	std::cout << j << std::endl;
+	std::cout << k << std::endl;
+
+	j.beRepaired(100);
+	std::cout << j << std::endl;
+	k.attack("Bobby");
+	j.takeDamage(k.getAtkDamage());
+	std::cout << j << std::endl;
+	k.guardGate();
+
+	std::cout << std::endl;
+	std::cout << "####################Destructors#####################" << std::endl;
+	std::cout << std::endl;
 }
