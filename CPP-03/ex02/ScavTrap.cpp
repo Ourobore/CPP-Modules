@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:56:44 by user42            #+#    #+#             */
-/*   Updated: 2021/07/07 21:33:32 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/07 21:36:23 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
 ScavTrap::ScavTrap(ScavTrap const &rhs) : ClapTrap(rhs)
 {
 	std::cout << "<" << this->getName() << "> Once again I am just a copy... But this time a stronger copy !" << std::endl;
-	//*this = rhs;
 }
 
 ScavTrap&	ScavTrap::operator=(ScavTrap const &rhs)
 {
+	std::cout << "<" << this->getName() << "> But ?! That´s not me !" << std::endl; 
 	if (this != &rhs)
 	{
 		this->setName(rhs.getName());
@@ -37,7 +37,6 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const &rhs)
 		this->setEnergyPoints(rhs.getEnergyPoints());
 		this->setAtkDamage(rhs.getAtkDamage());
 	}
-	std::cout << "<" << this->getName() << "> But ?! That´s not me !" << std::endl; 
 	return (*this);
 }
 

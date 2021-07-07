@@ -1,4 +1,7 @@
-SRCS		= main.cpp
+SRCS		= main.cpp \
+			  ClapTrap.cpp \
+			  ScavTrap.cpp \
+			  FragTrap.cpp
 
 OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
@@ -10,7 +13,7 @@ CC			= clang++
 
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-NAME		= 
+NAME		= FragTrap
 
 all			: $(NAME)
 
