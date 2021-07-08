@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 14:11:30 by user42            #+#    #+#             */
-/*   Updated: 2021/07/08 12:05:18 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/08 12:42:49 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(void)
 	std::cout << b << std::endl;
 	b = a;
 	std::cout << b << std::endl;
-*/
+
 	std::cout << std::endl;
 	std::cout << "#####################Ex01#######################" << std::endl;
 	std::cout << std::endl;
@@ -57,6 +57,49 @@ int	main(void)
 	j.takeDamage(k.getAtkDamage());
 	std::cout << j << std::endl;
 	k.guardGate();
+
+	std::cout << std::endl;
+	std::cout << "#####################Ex02#######################" << std::endl;
+	std::cout << std::endl;
+
+
+	FragTrap o;
+	FragTrap p("Harry");
+	FragTrap q("Jenny");
+	FragTrap r(p);
+
+	std::cout << o << std::endl;
+	std::cout << p << std::endl;
+	std::cout << q << std::endl;
+
+	p.beRepaired(100);
+	std::cout << j << std::endl;
+	q.attack("Harry");
+	p.takeDamage(q.getAtkDamage());
+	std::cout << p << std::endl;
+	r.highFiveGuys();
+*/
+	std::cout << std::endl;
+	std::cout << "#####################Ex03#######################" << std::endl;
+	std::cout << std::endl;
+
+	DiamondTrap f;
+	DiamondTrap l("Johnny");
+	DiamondTrap s("Hera");
+
+	std::cout << f << std::endl;
+	std::cout << l << std::endl;
+	std::cout << s << std::endl;
+	s.attack("Johnny");
+	l.takeDamage(s.getAtkDamage());
+	std::cout << l << std::endl;
+	l.ScavTrap::takeDamage(s.getAtkDamage());
+	std::cout << l << std::endl;
+	l.beRepaired(300);
+	std::cout << l << std::endl;
+	s.guardGate();
+	l.highFiveGuys();
+	l.whoAmI();
 
 	std::cout << std::endl;
 	std::cout << "####################Destructors#####################" << std::endl;

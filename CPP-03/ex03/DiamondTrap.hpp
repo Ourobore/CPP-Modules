@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 15:55:45 by user42            #+#    #+#             */
-/*   Updated: 2021/07/08 12:30:25 by lchapren         ###   ########.fr       */
+/*   Created: 2021/07/08 10:35:21 by lchapren          #+#    #+#             */
+/*   Updated: 2021/07/08 12:36:03 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef DIAMONDTRAP_CPP
+# define DIAMONDTRAP_CPP
 
 # include "robot.hpp"
 
-class ScavTrap : public ClapTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
+	private:
+		std::string	_name;
+
 	public:
-		ScavTrap(void);
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const &rhs);
-		ScavTrap&	operator=(ScavTrap const &rhs);
-		~ScavTrap(void);
+		DiamondTrap(void);
+		DiamondTrap(std::string	name);
+		DiamondTrap(DiamondTrap const &rhs);
+		FragTrap&	operator=(DiamondTrap const &rhs);
+		~DiamondTrap(void);
 
 		void	attack(std::string const &target) const;
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
-		
-		void	guardGate(void) const;
+
+
+		void	whoAmI(void) const;
+
+		std::string	getName(void) const;
 };
+
+std::ostream& operator<<(std::ostream &o, DiamondTrap const &rhs);
 
 #endif

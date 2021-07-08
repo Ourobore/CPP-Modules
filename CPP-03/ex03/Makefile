@@ -1,4 +1,8 @@
-SRCS		= main.cpp
+SRCS		= main.cpp \
+			  ClapTrap.cpp \
+			  ScavTrap.cpp \
+			  FragTrap.cpp \
+			  DiamondTrap.cpp
 
 OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
@@ -8,9 +12,9 @@ OBJS_DIR	= objs/
 
 CC			= clang++
 
-CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
+CPPFLAGS	= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
-NAME		=
+NAME		= DiamondTrap
 
 all			: $(NAME)
 

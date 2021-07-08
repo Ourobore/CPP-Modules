@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 14:11:30 by user42            #+#    #+#             */
-/*   Updated: 2021/07/07 21:44:30 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/08 12:04:59 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	main(void)
 {
+/*
 	ClapTrap none;
 	ClapTrap numberOne("Micky");
 
@@ -56,7 +57,7 @@ int	main(void)
 	j.takeDamage(k.getAtkDamage());
 	std::cout << j << std::endl;
 	k.guardGate();
-
+*/
 	std::cout << std::endl;
 	std::cout << "#####################Ex02#######################" << std::endl;
 	std::cout << std::endl;

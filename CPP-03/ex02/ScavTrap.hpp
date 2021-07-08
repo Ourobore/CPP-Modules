@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:55:45 by user42            #+#    #+#             */
-/*   Updated: 2021/07/07 21:28:40 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/08 12:30:06 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,5 @@ class ScavTrap : public ClapTrap
 		
 		void	guardGate(void) const;
 };
-
-std::ostream& operator<<(std::ostream &o, ClapTrap const &rhs);
 
 #endif
