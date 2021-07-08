@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:34:52 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/08 13:03:51 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/08 13:28:32 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,6 @@ DiamondTrap::DiamondTrap(void) : ClapTrap("NoName_clap_name", 0, 0, 0), _name("N
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name", 100, 50, 30), _name(name)
 {
-	/*
-	this->_name = name;
-	this->ClapTrap::_name = this->_name + "_clap_name";
-	this->_hitPoints = this->FragTrap::getHitPoints();
-	this->ClapTrap::setHitPoints(this->FragTrap::getHitPoints());
-	this->ClapTrap::setEnergyPoints(this->FragTrap::getEnergyPoints());
-	this->ClapTrap::setAtkDamage(this->FragTrap::getAtkDamage());
-	*/
 	std::cout << "<" << this->getName() << "> I just got mixed!" << std::endl;
 }
 
