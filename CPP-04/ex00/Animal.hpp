@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 13:55:47 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/09 14:29:27 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:17:38 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ class	Animal
 		~Animal(void);
 		
 		virtual void	makeSound(void) const;
+			// Could have used a pure virtual function and made the Animal class abstract
+			// We don't need an instance of Animal in this case. Just an Animal means nothing
+			// But it's not the exercice, the main declare an instance of Animal
 
 		std::string	getType(void) const;
 		void		setType(std::string type);

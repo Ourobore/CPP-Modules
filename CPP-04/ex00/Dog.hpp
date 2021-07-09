@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:31:27 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/09 14:35:33 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:09:24 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Dog : public Animal
 		Dog& operator=(Dog const &rhs);
 		~Dog(void);
 
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 };
 
 #endif

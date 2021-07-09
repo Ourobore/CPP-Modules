@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:09:00 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/09 14:29:22 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:09:20 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat : public Animal
 		Cat& operator=(Cat const &rhs);
 		~Cat(void);
 
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 };
 
 #endif
