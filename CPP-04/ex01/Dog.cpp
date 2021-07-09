@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 14:10:59 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/09 15:27:06 by lchapren         ###   ########.fr       */
+/*   Created: 2021/07/09 14:32:23 by lchapren          #+#    #+#             */
+/*   Updated: 2021/07/09 15:45:03 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cpp04.hpp"
 
-Cat::Cat(void) : Animal("Cat")
+Dog::Dog(void) : Animal("Dog"), _brain(new Brain)
 {
+	std::cout << "Constructor: Dog" << std::endl;
 }
 
-Cat::Cat(Cat const &rhs)
+Dog::Dog(Dog const &rhs)
 {
 	*this = rhs;
 }
 
-Cat& Cat::operator=(Cat const &rhs)
+Dog& Dog::operator=(Dog const &rhs)
 {
 	if (this != &rhs)
 		this->setType(rhs.getType());
 	return (*this);
 }
 
-Cat::~Cat(void)
+Dog::~Dog(void)
 {
+	std::cout << "Destructor: Dog" << std::endl;
+	delete _brain;
 }
 
-void	Cat::makeSound(void) const
+void	Dog::makeSound(void) const
 {
-	std::cout << "The cat makes miaouuu!" << std::endl;
+	std::cout << "The dog makes ouafff!" << std::endl;
 }

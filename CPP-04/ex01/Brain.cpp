@@ -1,38 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 14:10:59 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/09 15:27:06 by lchapren         ###   ########.fr       */
+/*   Created: 2021/07/09 15:29:29 by lchapren          #+#    #+#             */
+/*   Updated: 2021/07/09 15:44:39 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cpp04.hpp"
 
-Cat::Cat(void) : Animal("Cat")
+Brain::Brain(void) : _ideas(new std::string[100])
 {
+	std::cout << "Constructor: Brain" << std::endl;
 }
 
-Cat::Cat(Cat const &rhs)
+Brain::Brain(Brain const &rhs)
 {
 	*this = rhs;
 }
 
-Cat& Cat::operator=(Cat const &rhs)
+Brain&	Brain::operator=(Brain const &rhs)
 {
 	if (this != &rhs)
-		this->setType(rhs.getType());
+		this->setIdeas(rhs.getIdeas());
 	return (*this);
 }
 
-Cat::~Cat(void)
+Brain::~Brain(void)
 {
+	std::cout << "Destructor: Brain" << std::endl;
+	delete [] this->_ideas;
 }
 
-void	Cat::makeSound(void) const
+std::string*	Brain::getIdeas(void) const
 {
-	std::cout << "The cat makes miaouuu!" << std::endl;
+	return (this->_ideas);
+}
+
+void			Brain::setIdeas(std::string *ideas)
+{
+	this->_ideas = ideas;
 }

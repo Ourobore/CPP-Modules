@@ -6,14 +6,14 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:09:00 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/09 15:09:20 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:27:02 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
 
-# include "ex00.hpp"
+# include "cpp04.hpp"
 
 class Cat : public Animal
 {

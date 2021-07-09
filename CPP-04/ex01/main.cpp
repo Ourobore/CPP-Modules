@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 14:37:06 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/09 15:27:09 by lchapren         ###   ########.fr       */
+/*   Created: 2021/07/09 13:53:08 by lchapren          #+#    #+#             */
+/*   Updated: 2021/07/09 15:48:08 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#include "cpp04.hpp"
 
-# include "cpp04.hpp"
-
-class WrongCat : public WrongAnimal
+int main()
 {
-	public:
-		WrongCat(void);
-		WrongCat(WrongCat const &rhs);
-		WrongCat& operator=(WrongCat const &rhs);
-		~WrongCat(void);
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-		void	makeSound(void) const;
-};
-
-#endif
+	delete j;//should not create a leak
+	delete i;
+}

@@ -6,11 +6,11 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:32:23 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/09 14:34:41 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:27:03 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ex00.hpp"
+#include "cpp04.hpp"
 
 Dog::Dog(void) : Animal("Dog")
 {

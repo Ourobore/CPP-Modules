@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex00.hpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 13:53:36 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/09 14:46:44 by lchapren         ###   ########.fr       */
+/*   Created: 2021/07/09 15:28:25 by lchapren          #+#    #+#             */
+/*   Updated: 2021/07/09 15:39:21 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX00_HPP
-# define EX00_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include <iostream>
-# include "Animal.hpp"
-# include "Cat.hpp"
-# include "Dog.hpp"
-# include "WrongAnimal.hpp"
-# include "WrongCat.hpp"
+# include "cpp04.hpp"
+
+class Brain
+{
+	protected:
+		std::string *_ideas;
+
+	public:
+		Brain(void);
+		Brain(Brain const &rhs);
+		Brain& operator=(Brain const &rhs);
+		~Brain(void);
+
+		std::string*	getIdeas(void) const;
+		void			setIdeas(std::string *ideas);
+};
 
 #endif

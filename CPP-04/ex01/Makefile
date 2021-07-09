@@ -1,4 +1,8 @@
-SRCS		= main.cpp
+SRCS		= main.cpp \
+			  Animal.cpp \
+			  Cat.cpp \
+			  Dog.cpp \
+			  Brain.cpp
 
 OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
@@ -10,7 +14,7 @@ CC			= clang++
 
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-NAME		= 
+NAME		= brain
 
 all			: $(NAME)
 

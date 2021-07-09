@@ -6,11 +6,11 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:39:23 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/09 14:51:42 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/09 15:27:07 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ex00.hpp"
+#include "cpp04.hpp"
 
 WrongAnimal::WrongAnimal(void) : _type("Wrong: Not known")
 {
