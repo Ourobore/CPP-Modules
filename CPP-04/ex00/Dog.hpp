@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/09 14:31:27 by lchapren          #+#    #+#             */
+/*   Updated: 2021/07/09 14:35:33 by lchapren         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef DOG_HPP
+# define DOG_HPP
+
+# include "ex00.hpp"
+
+class Dog : public Animal
+{
+	public:
+		Dog(void);
+		Dog(Dog const &rhs);
+		Dog& operator=(Dog const &rhs);
+		~Dog(void);
+
+		virtual void	makeSound(void) const;
+};
+
+#endif
