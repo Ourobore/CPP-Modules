@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:35:21 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/08 12:36:03 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/09 12:42:51 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		~DiamondTrap(void);
 
 		void	attack(std::string const &target) const;
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-
 
 		void	whoAmI(void) const;
 

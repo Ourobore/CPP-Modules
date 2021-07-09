@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:34:52 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/08 13:28:32 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/09 12:42:40 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,6 @@ void	DiamondTrap::attack(std::string const &target) const
 {
 	std::cout << "<" << this->getName() << "> Here comes my special!" << std::endl;
 	this->ScavTrap::attack(target);
-}
-
-void	DiamondTrap::takeDamage(unsigned int amount)
-{
-	std::cout << "<" << this->getName() << "> Who will take the blow? Oh it's me..." << std::endl;
-	this->FragTrap::takeDamage(amount);
-}
-
-void	DiamondTrap::beRepaired(unsigned int amount)
-{
-	std::cout << "<" << this->getName() << "> Thank you! I needed that" << std::endl;
-	this->FragTrap::beRepaired(amount);
 }
 
 void	DiamondTrap::whoAmI(void) const

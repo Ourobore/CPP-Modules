@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 21:23:27 by user42            #+#    #+#             */
-/*   Updated: 2021/07/07 21:36:26 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/09 12:55:54 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,25 +43,6 @@ FragTrap&	FragTrap::operator=(FragTrap const &rhs)
 FragTrap::~FragTrap(void)
 {
 	std::cout << "<" << this->getName() << "> I don´t wanna be dismantled..." << std::endl;
-}
-
-void	FragTrap::attack(std::string const &target) const
-{
-	std::cout << "<" << this->getName() << "> I don´t wanna hurt you, but I have to!" << std::endl;
-	ClapTrap::attack(target);
-}
-
-void	FragTrap::takeDamage(unsigned int amount)
-{
-	std::cout << "<" << this->getName() << "> Ouch that hurts" << std::endl;
-	ClapTrap::takeDamage(amount);
-}
-
-void	FragTrap::beRepaired(unsigned int amount)
-{
-	std::cout << "<" << this->getName() << "> I´m dying, please help me!" << std::endl;
-	ClapTrap::beRepaired(amount);
-
 }
 
 void	FragTrap::highFiveGuys(void) const

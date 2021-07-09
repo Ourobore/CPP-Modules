@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 14:11:30 by user42            #+#    #+#             */
-/*   Updated: 2021/07/08 12:04:59 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/09 12:56:27 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	main(void)
 	std::cout << q << std::endl;
 
 	p.beRepaired(100);
-	std::cout << j << std::endl;
+	std::cout << p << std::endl;
 	q.attack("Harry");
 	p.takeDamage(q.getAtkDamage());
 	std::cout << p << std::endl;

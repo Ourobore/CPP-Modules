@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:56:44 by user42            #+#    #+#             */
-/*   Updated: 2021/07/07 21:36:23 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/09 13:07:27 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,6 @@ void	ScavTrap::attack(std::string const &target) const
 {
 	std::cout << "<" << this->getName() << "> Let´s go! Charge!" << std::endl;
 	ClapTrap::attack(target);
-}
-
-void	ScavTrap::takeDamage(unsigned int amount)
-{
-	std::cout << "<" << this->getName() << "> No!!! Please don´t hit me!" << std::endl;
-	ClapTrap::takeDamage(amount);
-}
-
-void	ScavTrap::beRepaired(unsigned int amount)
-{
-	std::cout << "<" << this->getName() << "> I need healing!" << std::endl;
-	ClapTrap::beRepaired(amount);
-
 }
 
 void	ScavTrap::guardGate(void) const

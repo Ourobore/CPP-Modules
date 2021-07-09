@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 14:12:41 by user42            #+#    #+#             */
-/*   Updated: 2021/07/07 21:28:21 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/09 13:02:36 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ ClapTrap::ClapTrap(std::string name, unsigned int hitPoints, unsigned int energy
 
 ClapTrap::ClapTrap(ClapTrap const &rhs)
 {
-	std::cout << "<" << this->getName() << "> Am I their sibling?" << std::endl;
 	*this = rhs;
+	std::cout << "<" << this->getName() << "> Am I their sibling?" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap const &rhs)

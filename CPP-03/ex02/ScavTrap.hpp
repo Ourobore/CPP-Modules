@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:55:45 by user42            #+#    #+#             */
-/*   Updated: 2021/07/08 12:30:06 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/09 13:04:19 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ class ScavTrap : public ClapTrap
 		~ScavTrap(void);
 
 		void	attack(std::string const &target) const;
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
 		
 		void	guardGate(void) const;
 };
