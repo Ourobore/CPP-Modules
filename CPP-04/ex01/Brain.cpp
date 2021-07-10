@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 15:29:29 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/09 15:44:39 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/10 10:08:58 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ std::string*	Brain::getIdeas(void) const
 
 void			Brain::setIdeas(std::string *ideas)
 {
+	this->_ideas = new std::string[100];
 	this->_ideas = ideas;
 }

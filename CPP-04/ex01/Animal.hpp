@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 13:55:47 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/09 15:27:01 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/10 21:31:34 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	Animal
 		Animal(std::string type);
 		Animal(Animal const &rhs);
 		Animal& operator=(Animal const &rhs);
-		~Animal(void);
+		virtual ~Animal(void);
 		
 		virtual void	makeSound(void) const;
 			// Could have used a pure virtual function and made the Animal class abstract

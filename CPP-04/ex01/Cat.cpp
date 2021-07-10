@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:10:59 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/09 15:45:20 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/07/10 21:39:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ Cat::Cat(Cat const &rhs)
 Cat& Cat::operator=(Cat const &rhs)
 {
 	if (this != &rhs)
+	{
 		this->setType(rhs.getType());
+		this->_brain = new Brain(*rhs._brain);
+	}
 	return (*this);
 }
 
