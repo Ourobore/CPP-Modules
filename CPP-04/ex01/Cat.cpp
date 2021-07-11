@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:10:59 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/10 21:39:49 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/11 10:46:57 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ Cat::Cat(void) : Animal("Cat"), _brain(new Brain)
 
 Cat::Cat(Cat const &rhs)
 {
+	std::cout << "Copy constructor: Cat" << std::endl;
 	*this = rhs;
 }
 
 Cat& Cat::operator=(Cat const &rhs)
 {
+	std::cout << "Assignment overload: Cat" << std::endl;
 	if (this != &rhs)
 	{
 		this->setType(rhs.getType());
