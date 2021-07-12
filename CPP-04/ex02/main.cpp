@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 13:53:08 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/12 12:41:01 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/12 15:30:47 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,7 @@ int main()
 
 	for (int q = 0; q < nbAnimal; q++)
 		delete array[q];
+
+	//AAnimal	s;
+	//AAnimal*	p = new AAnimal;
 }

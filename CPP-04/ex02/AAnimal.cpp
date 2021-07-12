@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:01:38 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/12 12:39:49 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/12 15:27:08 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ AAnimal::~AAnimal(void)
 	std::cout << "Destructor: Animal" << std::endl;
 }
 
-void		AAnimal::makeSound(void) const
-{
-	std::cout << "What sound makes a basic animal? Grrr?" << std::endl;
-}
+//void		AAnimal::makeSound(void) const
+//{
+//	std::cout << "What sound makes a basic animal? Grrr?" << std::endl;
+//}
 
 std::string	AAnimal::getType(void) const
 {
