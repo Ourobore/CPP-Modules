@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:09:00 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/10 14:12:41 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/12 11:03:32 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Cat : public Animal
 		~Cat(void);
 
 		void	makeSound(void) const;
+		Brain*	getBrain(void) const;
 };
 
 #endif

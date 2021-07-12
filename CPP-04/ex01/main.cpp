@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 13:53:08 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/11 15:57:40 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/12 12:33:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,82 +14,92 @@
 
 int main()
 {
-
-	Animal	*j = new Dog;
-	Animal	*i = new Cat;
-	Animal	*c(i);
-	Animal	*test(j);
-
-	std::cout << test->getType() << std::endl; 
-
-	std::cout << j->getType() << std::endl;
-	std::cout << i->getType() << std::endl;
-	std::cout << c->getType() << std::endl;
-
-	std::cout << std::endl;
-	*i = *j;
+	std::cout << "### Make sound test ###" << std::endl;
 	
-	std::cout << j->getType() << std::endl;
-	std::cout << i->getType() << std::endl;
-	std::cout << c->getType() << std::endl;
+	const Animal	*j = new Dog;
+	const Animal	*i = new Cat;
 
-	std::cout << std::endl;
-	i->setType("test");	
-	std::cout << j->getType() << std::endl;
-	std::cout << i->getType() << std::endl;
-	std::cout << c->getType() << std::endl;
-
+	std::cout << "j (Dog): "<< j->getType() << std::endl;
+	std::cout << "i (Cat): "<< i->getType() << std::endl;
+	j->makeSound();
+	i->makeSound();
+	
 	delete j;
 	delete i;
+	
+	std::cout << std::endl;
 
-	Animal* array = new Animal[10];
+	std::cout << "### Deep Copy test ###" << std::endl;
+	Animal*	x = new Dog();
+	Animal*	y = new Dog(*((Dog*)x));
+	std::string*	modIdeas = new std::string[100];
+	
+	std::cout << "x (Dog): "<< x->getType() << std::endl;
+	std::cout << "y (Copy): "<< y->getType() << std::endl;
+	std::cout << "x (Dog* casted): " << ((Dog*)x)->getBrain()->getIdeas()[0] << std::endl;
+	std::cout << "y (Dog* casted): " << ((Dog*)y)->getBrain()->getIdeas()[0] << std::endl;
 
-	for (int a = 0; a < 10; a++)
-		array[a] = Dog();
+	std::cout << std::endl;
 
-	//for (int b = 0; b < 10; b++)
-	//	delete array[b];
+	x->setType("Changed");
+	modIdeas[0] = "Just a thought";
+	delete [] ((Dog*)x)->getBrain()->getIdeas();
+	((Dog*)x)->getBrain()->setIdeas(modIdeas);
 
-	delete [] array;
+	std::cout << "x : "<< x->getType() << std::endl;
+	std::cout << "y : "<< y->getType() << std::endl;
+	std::cout << "x (Dog* casted): " << ((Dog*)x)->getBrain()->getIdeas()[0] << std::endl;
+	std::cout << "y (Dog* casted): " << ((Dog*)y)->getBrain()->getIdeas()[0] << std::endl;
+	
+	delete x;
+	delete y;
 
-	/*
-	Animal* 	j = new Dog();
-	Cat*	i = new Cat();
-	Cat*	copy(i);
-
-	*copy = *i;
-
-	std::cout << j->getType() << std::endl;
-	std::cout << i->getType() << std::endl;
-	std::cout << copy->getType() << std::endl;
-
-	i->setType("prout");
-	std::cout << i->getType() << std::endl;
-	std::cout << copy->getType() << std::endl;
-
-
-	//delete j;//should not create a leak
-	//delete i;
-*/
+// Demonstration of non deep copy with assignement operator
+// But leaks because you can´t check if an item is already deleted
 /*
 	std::cout << std::endl;
 
+	Animal* a = new Cat();
+	Animal*	b = new Cat();
+	std::string*	modIdeas2 = new std::string[100];
+
+	std::cout << "a (Cat): "<< a->getType() << std::endl;
+	std::cout << "b (Assignement): "<< b->getType() << std::endl;
+	std::cout << "a (Cat* casted): " << ((Cat*)a)->getBrain()->getIdeas()[0] << std::endl;
+	std::cout << "b (Cat* casted): " << ((Cat*)b)->getBrain()->getIdeas()[0] << std::endl;
+
+	delete ((Cat*)b)->getBrain();
+	*((Cat*)b) = *((Cat*)a);
+	a->setType("Assign");
+	modIdeas2[0] = "Just another thought";
+	((Cat*)a)->getBrain()->setIdeas(modIdeas2);
+
+	std::cout << "a (Cat): "<< a->getType() << std::endl;
+	std::cout << "b (Assignement): "<< b->getType() << std::endl;
+	std::cout << "a (Cat* casted): " << ((Cat*)a)->getBrain()->getIdeas()[0] << std::endl;
+	std::cout << "b (Cat* casted): " << ((Cat*)b)->getBrain()->getIdeas()[0] << std::endl;
+
+	delete a;
+	//delete b;
+*/
+	std::cout << std::endl;
+
+	std::cout << "### Animal Array test ###" << std::endl;
 	int nbAnimal = 10;
-	Animal*	array = new Animal[nbAnimal];
-	for (int q = 0; q < nbAnimal; q++)
+	Animal* array[nbAnimal];
+	
+	for (int i = 0; i < nbAnimal; i++)
 	{
-		std::cout << q << " " << array[q].getType() << std::endl;
-		if (q < nbAnimal / 2)
-			array[q] = *(new Dog);
+		if (i < nbAnimal / 2)
+			array[i] = new Dog();
 		else
-			array[q] = *(new Cat);
-		std::cout << q << " " << array[q].getType() << std::endl;
+			array[i] = new Cat();
+		std::cout << i << ": " << array[i]->getType() << std::endl;
+		array[i]->makeSound();
 	}
 
+	std::cout << std::endl;
+
 	for (int q = 0; q < nbAnimal; q++)
-		delete &array[q];
-	delete i;
-	delete j;
-	delete [] array;
-*/
+		delete array[q];
 }
