@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:25:43 by user42            #+#    #+#             */
-/*   Updated: 2021/07/16 18:12:57 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/16 20:45:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int main()
 {
+	std::cout << "##### Subject tests #####" << std::endl;
+	
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -34,5 +36,31 @@ int main()
 	delete me;
 	delete src;
 	
+	std::cout << std::endl;
+	std::cout << "##### My tests #####" << std::endl;
+
+	AMateria*	source = new Ice;
+	std::cout << "Source: " << source->getType() << std::endl;
+	std::cout << std::endl;
+	
+	std::cout << "Copy constructor test:" << std::endl;
+	AMateria*	copy = source->clone();
+	std::cout << "Copy: " << copy->getType() << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "Assignement test:" << std::endl;
+	AMateria*	assign = new Cure;
+	std::cout << "Assign (before assignement): " << assign->getType() << std::endl;
+	*assign = *source;
+	std::cout << "Assign (after assignement): " << assign->getType() << std::endl;
+
+	delete source;
+	delete copy;
+	delete assign;
+
+	//ICharacter* dummy = new Character("Dummy");
+
+	//std::cout << "Equip / use with full / empty inventory or wrong index (should display nothing)" << std::endl;
+
 	return 0;
 }

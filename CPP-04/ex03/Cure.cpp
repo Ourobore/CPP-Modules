@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 15:06:14 by user42            #+#    #+#             */
-/*   Updated: 2021/07/16 17:38:38 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/16 20:40:36 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Cure::Cure(void) : AMateria("cure")
 
 Cure::Cure(Cure const &rhs) : AMateria(rhs)
 {
+	std::cout << "Cure copy" << std::endl;
 }
 
 Cure&	Cure::operator=(Cure const &rhs)

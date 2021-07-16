@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:56:55 by user42            #+#    #+#             */
-/*   Updated: 2021/07/16 17:38:42 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/16 20:33:32 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Ice::Ice(void) : AMateria("ice")
 
 Ice::Ice(Ice const &rhs) : AMateria(rhs)
 {
+	std::cout << "Ice copy" << std::endl;
 }
 
 Ice&	Ice::operator=(Ice const &rhs)

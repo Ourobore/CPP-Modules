@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 13:53:08 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/12 15:30:47 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/16 21:06:04 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int main()
 /*
 	std::cout << std::endl;
 
-	AAnimal* a = new Cat();
+	AAnimal*	a = new Cat();
 	AAnimal*	b = new Cat();
 	std::string*	modIdeas2 = new std::string[100];
 

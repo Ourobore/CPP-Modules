@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:24:00 by user42            #+#    #+#             */
-/*   Updated: 2021/07/16 18:17:53 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/16 19:18:31 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class	AMateria
 		AMateria(void);
 		AMateria(std::string const &type);
 		AMateria(AMateria const &rhs);
+		AMateria(AMateria* rhs);
 		AMateria& operator=(AMateria const &rhs);
 		virtual ~AMateria(void);
 
