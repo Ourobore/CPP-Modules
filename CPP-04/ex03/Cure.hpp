@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 15:06:17 by user42            #+#    #+#             */
-/*   Updated: 2021/07/16 16:50:36 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/16 18:17:14 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class	Cure : public AMateria
 		Cure(void);
 		Cure(Cure const &rhs);
 		Cure& operator=(Cure const &rhs);
-		virtual ~Cure(void);
+		~Cure(void);
 
 		AMateria* clone(void) const;
 		void	use(ICharacter& target);

@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 16:12:10 by user42            #+#    #+#             */
-/*   Updated: 2021/07/16 17:42:01 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/16 18:16:30 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ MateriaSource::MateriaSource(MateriaSource const &rhs)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (rhs._inventory[i] != NULL)
+		if (rhs._inventory[i])
 			_inventory[i] = rhs._inventory[i]->clone();
 		else
 			_inventory[i] = NULL;
@@ -35,12 +35,12 @@ MateriaSource&	MateriaSource::operator=(MateriaSource const &rhs)
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			if (_inventory[i] != NULL)
+			if (_inventory[i])
 			{
 				delete _inventory[i];
 				_inventory[i] = NULL;
 			}
-			if (rhs._inventory[i] != NULL)
+			if (rhs._inventory[i])
 				_inventory[i] = rhs._inventory[i]->clone();
 		}
 	}
@@ -50,7 +50,7 @@ MateriaSource&	MateriaSource::operator=(MateriaSource const &rhs)
 MateriaSource::~MateriaSource(void)
 {
 	for (int i = 0; i < 4; i++)
-		if (_inventory[i] != NULL)
+		if (_inventory[i])
 			delete _inventory[i];
 }
 
@@ -58,7 +58,7 @@ void	MateriaSource::learnMateria(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (_inventory[i] == NULL)
+		if (!_inventory[i])
 		{
 			_inventory[i] = m;
 			return ;

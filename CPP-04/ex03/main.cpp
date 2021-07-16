@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:25:43 by user42            #+#    #+#             */
-/*   Updated: 2021/07/16 17:30:25 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/16 18:12:57 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	
+
 	ICharacter* me = new Character("me");
 	
 	AMateria* tmp;
