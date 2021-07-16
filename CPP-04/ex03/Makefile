@@ -1,5 +1,9 @@
 SRCS		= main.cpp \
-			  AMateria.cpp
+			  AMateria.cpp \
+			  Ice.cpp \
+			  Cure.cpp \
+			  Character.cpp \
+			  MateriaSource.cpp
 
 OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
@@ -9,9 +13,9 @@ OBJS_DIR	= objs/
 
 CC			= clang++
 
-CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
+CPPFLAGS	= -Wall -Werror -Wextra -g3 -fsanitize=address -std=c++98
 
-NAME		= 
+NAME		= materia
 
 all			: $(NAME)
 

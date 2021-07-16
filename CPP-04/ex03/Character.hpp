@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/12 17:24:00 by user42            #+#    #+#             */
-/*   Updated: 2021/07/16 16:36:16 by user42           ###   ########.fr       */
+/*   Created: 2021/07/16 15:15:33 by user42            #+#    #+#             */
+/*   Updated: 2021/07/16 16:50:13 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
 # include "ex03.hpp"
 
-class	ICharacter;
-
-class	AMateria
+class	Character : public ICharacter
 {
-	protected:
-		std::string	_type;
+	private:
+		std::string	_name;
+		AMateria*	_inventory[4];
 
 	public:
-		AMateria(void);
-		AMateria(std::string const &type);
-		AMateria(AMateria const &rhs);
-		AMateria& operator=(AMateria const &rhs);
-		virtual ~AMateria(void);
+		Character(void);
+		Character(std::string const &name);
+		Character(Character const &rhs);
+		Character& operator=(Character const &rhs);
+		virtual ~Character(void);
 
-		virtual	AMateria* clone() const = 0;
-		virtual	void use(ICharacter& target);
+		void	equip(AMateria *m);
+		void	unequip(int idx);
+		void	use(int idx, ICharacter& target);
 
-		std::string const & getType() const;
+		std::string const & getName(void) const;
 };
 
 #endif
