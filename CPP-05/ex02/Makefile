@@ -1,4 +1,6 @@
-SRCS		= main.cpp 
+SRCS		= main.cpp \
+			  Bureaucrat.cpp \
+			  Form.cpp
 
 OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
@@ -10,7 +12,7 @@ CC			= clang++
 
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-NAME		= 
+NAME		= bureaucrat
 
 all			: $(NAME)
 
