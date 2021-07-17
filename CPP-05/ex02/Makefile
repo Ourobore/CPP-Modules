@@ -1,6 +1,9 @@
 SRCS		= main.cpp \
 			  Bureaucrat.cpp \
-			  Form.cpp
+			  Form.cpp \
+			  ShruberryCreationForm.cpp \
+			  RobotomyRequestForm.cpp \
+			  PresidentialPardonForm.cpp
 
 OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
@@ -26,7 +29,7 @@ $(OBJS_DIR)	:
 			  @mkdir $(OBJS_DIR)
 
 clean		:
-		 	 rm -rf $(OBJS_DIR)
+		 	 rm -rf $(OBJS_DIR) $(wildcard *_shruberry)
 
 fclean		: clean
 		 	 rm -rf $(NAME)

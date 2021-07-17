@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShruberryCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/17 17:52:24 by user42            #+#    #+#             */
-/*   Updated: 2021/07/17 21:33:42 by user42           ###   ########.fr       */
+/*   Created: 2021/07/17 20:53:08 by user42            #+#    #+#             */
+/*   Updated: 2021/07/17 20:56:10 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBERRYCREATIONFORM_HPP
-# define SHRUBERRYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 # include "bureau.hpp"
 
-class	ShruberryCreationForm : public Form
+class	RobotomyRequestForm : public Form
 {
-	std::string	_target;
-
+	private:
+		std::string	_target;
+		
 	public:
-		ShruberryCreationForm(void);
-		ShruberryCreationForm(std::string const &target);
-		ShruberryCreationForm(ShruberryCreationForm const &rhs);
-		ShruberryCreationForm& operator=(ShruberryCreationForm const &rhs);
-		~ShruberryCreationForm(void);
+		RobotomyRequestForm(void);
+		RobotomyRequestForm(std::string const &target);
+		RobotomyRequestForm(RobotomyRequestForm const &rhs);
+		RobotomyRequestForm& operator=(RobotomyRequestForm const &rhs);
+		~RobotomyRequestForm(void);
 
-		std::string getTarget(void) const;
+		std::string	getTarget(void) const;
 		void doAction(void) const;
 };
 

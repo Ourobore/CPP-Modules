@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShruberryCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/17 17:52:24 by user42            #+#    #+#             */
-/*   Updated: 2021/07/17 21:33:42 by user42           ###   ########.fr       */
+/*   Created: 2021/07/17 21:07:38 by user42            #+#    #+#             */
+/*   Updated: 2021/07/17 21:09:15 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBERRYCREATIONFORM_HPP
-# define SHRUBERRYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 # include "bureau.hpp"
 
-class	ShruberryCreationForm : public Form
+class	PresidentialPardonForm : public Form
 {
-	std::string	_target;
-
+	private:
+		std::string	_target;
+		
 	public:
-		ShruberryCreationForm(void);
-		ShruberryCreationForm(std::string const &target);
-		ShruberryCreationForm(ShruberryCreationForm const &rhs);
-		ShruberryCreationForm& operator=(ShruberryCreationForm const &rhs);
-		~ShruberryCreationForm(void);
+		PresidentialPardonForm(void);
+		PresidentialPardonForm(std::string const &target);
+		PresidentialPardonForm(PresidentialPardonForm const &rhs);
+		PresidentialPardonForm& operator=(PresidentialPardonForm const &rhs);
+		~PresidentialPardonForm(void);
 
-		std::string getTarget(void) const;
+		std::string	getTarget(void) const;
 		void doAction(void) const;
 };
 

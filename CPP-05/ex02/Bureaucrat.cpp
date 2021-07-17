@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 11:11:27 by user42            #+#    #+#             */
-/*   Updated: 2021/07/17 16:50:52 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/17 21:55:42 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,22 +69,35 @@ void Bureaucrat::decGrade(void)
 		_grade++;
 }
 
-void Bureaucrat::signForm(Form &rhs) const
+void Bureaucrat::signForm(Form &form) const
 {
 	try
 	{
-		rhs.beSigned(*this);
-		std::cout << "<" << this->getName() << "> signs <" << rhs.getName() << ">" << std::endl;
+		form.beSigned(*this);
+		std::cout << "<" << this->getName() << "> signs <" << form.getName() << ">" << std::endl;
 	}
 	catch (std::exception& e)
 	{
-		std::cout << "<" << this->getName() << "> cannot sign <" << rhs.getName() << "> because <" \
+		std::cout << "<" << this->getName() << "> cannot sign <" << form.getName() << "> because <" \
 		<< e.what() << ">" << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(Form const &form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << *this << " has executed <" << form.getName() << ">" << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << "Execution failure: " << e.what() << std::endl;
 	}
 }
 
 std::ostream& operator<<(std::ostream &o, Bureaucrat const &rhs)
 {
-	o << "<" << rhs.getName() << ">, bureaucrat grade <" << rhs.getGrade() << ">.";
+	o << "<" << rhs.getName() << ">, bureaucrat grade <" << rhs.getGrade() << ">";
 	return (o);
 }

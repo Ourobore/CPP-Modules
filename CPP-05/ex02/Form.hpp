@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 13:10:24 by user42            #+#    #+#             */
-/*   Updated: 2021/07/17 17:54:02 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/17 21:23:03 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class	Form
 		~Form(void);
 
 		void beSigned(Bureaucrat const &rhs);
+		void execute(Bureaucrat const &executor) const;
+		virtual void doAction(void) const = 0;
 
 		std::string const getName(void) const;
 		unsigned int getSignGrade(void) const;
@@ -59,6 +61,15 @@ class	Form
 				virtual const char* what() const throw()
 				{
 					return ("Already signed");
+				}
+		};
+
+		class	NotSignedException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("Not signed");
 				}
 		};
 };

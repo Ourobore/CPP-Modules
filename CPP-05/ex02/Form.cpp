@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 13:21:07 by user42            #+#    #+#             */
-/*   Updated: 2021/07/17 17:02:22 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/17 21:43:34 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,15 @@ void Form::beSigned(Bureaucrat const &rhs)
 		_signed = true;
 	else
 		throw Form::GradeTooLowException();
+}
+
+void Form::execute(Bureaucrat const &executor) const
+{
+	if (_execGrade < executor.getGrade())
+		throw GradeTooLowException();
+	if (!_signed)
+		throw NotSignedException();
+	doAction();
 }
 
 std::string const Form::getName(void) const
