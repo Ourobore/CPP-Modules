@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 10:53:39 by user42            #+#    #+#             */
-/*   Updated: 2021/07/17 17:13:08 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/17 17:16:00 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,7 @@ int	main(void)
 	
 	bb.signForm(b);
 	bb.incGrade();
+	bb.signForm(b);
 	bb.signForm(b);
 	std::cout << std::endl;
 
