@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:25:43 by user42            #+#    #+#             */
-/*   Updated: 2021/07/16 20:45:20 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/17 09:45:02 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,28 +39,66 @@ int main()
 	std::cout << std::endl;
 	std::cout << "##### My tests #####" << std::endl;
 
-	AMateria*	source = new Ice;
-	std::cout << "Source: " << source->getType() << std::endl;
+	IMateriaSource*	source = new MateriaSource();
+	AMateria*	m;
+	AMateria*	m1 = new Cure;
+	AMateria*	m2 = new Ice;
+	ICharacter*	notme = new Character("notme");
+	ICharacter*	dummy = new Character("Dummy");
+
+	m = source->createMateria("Cure");
+	notme->equip(m);
+	std::cout << "Should display nothing because Cure materia template is not known by source:" << std::endl;
+	for (int i = 0; i < 4; i++)
+	{
+		notme->use(i, *dummy);
+		notme->unequip(i);
+	}
+
 	std::cout << std::endl;
+
+	source->learnMateria(m1);
+	source->learnMateria(m2);
+	source->learnMateria(new Ice);
+	source->learnMateria(new Ice);
+	source->learnMateria(m);
+	// Last Cure (m) is not learned because source inventory is full
+
+	std::cout << "Should print Cure / Ice / Ice / Ice messages:" << std::endl;
+	notme->equip(source->createMateria("cure"));
+	notme->equip(source->createMateria("ice"));
+	notme->equip(source->createMateria("ice"));
+	notme->equip(source->createMateria("ice"));
+	m = source->createMateria("cure");
+	notme->equip(m);
 	
-	std::cout << "Copy constructor test:" << std::endl;
-	AMateria*	copy = source->clone();
-	std::cout << "Copy: " << copy->getType() << std::endl;
+	for (int i = 0; i < 4; i++)
+		notme->use(i, *dummy);
+
+	std::cout << "Doesn´t print cure message because inventory is full when 'learned':" << std::endl;
+	notme->use(5, *dummy);
+	std::cout << "Doesn´t unequip it neither:" << std::endl;
+	notme->unequip(5);
+
 	std::cout << std::endl;
 
-	std::cout << "Assignement test:" << std::endl;
-	AMateria*	assign = new Cure;
-	std::cout << "Assign (before assignement): " << assign->getType() << std::endl;
-	*assign = *source;
-	std::cout << "Assign (after assignement): " << assign->getType() << std::endl;
+	std::cout << "Character copy constructor:" << std::endl;
+	Character* copy = new Character(*((Character*)notme));
+	for (int i = 0; i < 4; i++)
+		notme->use(i, *dummy);
 
+	std::cout << "Character assignation:" << std::endl;
+	for (int i = 0; i < 4; i++)
+		dummy->use(i, *notme);
+	*((Character*)dummy) = *copy;
+	for (int i = 0; i < 4; i++)
+		dummy->use(i, *notme);
+
+	delete m;
 	delete source;
 	delete copy;
-	delete assign;
-
-	//ICharacter* dummy = new Character("Dummy");
-
-	//std::cout << "Equip / use with full / empty inventory or wrong index (should display nothing)" << std::endl;
+	delete dummy;
+	delete notme;
 
 	return 0;
 }
