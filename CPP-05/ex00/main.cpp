@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 10:53:39 by user42            #+#    #+#             */
-/*   Updated: 2021/07/17 12:09:11 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/18 09:14:03 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,16 +74,16 @@ int	main(void)
 	try
 	{
 		c.incGrade();
-		std::cout << "Succes: " << c << std::endl;
+		std::cout << "Succes (second inc): " << c << std::endl;
 	}
 	catch (std::exception& e)
 	{
-		std::cout << "Failure: " << e.what() << std::endl;
+		std::cout << "Failure (second inc): " << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 
 	// Decrement GradeTooLowException
-	std::cout << "### Increment GradeTooLowException (150--) ###" << std::endl;
+	std::cout << "### Deccrement GradeTooLowException (150--) ###" << std::endl;
 	Bureaucrat g("Omega", 149);
 	std::cout << c << std::endl;
 	try
@@ -98,12 +98,12 @@ int	main(void)
 	std::cout << "First dec: " << g << std::endl;
 	try
 	{
-		g.incGrade();
-		std::cout << "Succes: " << c << std::endl;
+		g.decGrade();
+		std::cout << "Succes (second dec): " << c << std::endl;
 	}
 	catch (std::exception& e)
 	{
-		std::cout << "Failure: " << e.what() << std::endl;
+		std::cout << "Failure (second dec): " << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 	
@@ -116,10 +116,8 @@ int	main(void)
 	std::cout << std::endl;
 	
 	//Copy constructor
-	std::cout << "### Copy constructor (from c) ###" << std::endl;
+	std::cout << "### Copy constructor (d from c) ###" << std::endl;
 	std::cout << "c: " << c << std::endl;
 	Bureaucrat d(c);
 	std::cout << "d: " << d << std::endl;
-	std::cout << std::endl;
-
 }

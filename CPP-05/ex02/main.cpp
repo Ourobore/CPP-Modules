@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 10:53:39 by user42            #+#    #+#             */
-/*   Updated: 2021/07/17 21:54:02 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/18 09:19:28 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(void)
 	
 	std::cout << bob << std::endl;
 
+	std::cout << a << std::endl;
 	bob.executeForm(a);
 	bob.incGrade();
 	std::cout << bob << std::endl;
@@ -37,6 +38,7 @@ int	main(void)
 	
 	std::cout << nat << std::endl;
 
+	std::cout << b << std::endl;
 	nat.executeForm(b);
 	nat.incGrade();
 	std::cout << nat << std::endl;
@@ -52,6 +54,7 @@ int	main(void)
 	
 	std::cout << groot << std::endl;
 
+	std::cout << c << std::endl;
 	groot.executeForm(c);
 	groot.incGrade();
 	std::cout << groot << std::endl;

@@ -15,7 +15,7 @@ CC			= clang++
 
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-NAME		= bureaucrat
+NAME		= form
 
 all			: $(NAME)
 
