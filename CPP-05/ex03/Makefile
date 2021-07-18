@@ -1,4 +1,10 @@
-SRCS		= main.cpp 
+SRCS		= main.cpp \
+			  Bureaucrat.cpp \
+			  Form.cpp \
+			  ShruberryCreationForm.cpp \
+			  RobotomyRequestForm.cpp \
+			  PresidentialPardonForm.cpp \
+			  Intern.cpp
 
 OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
@@ -10,7 +16,7 @@ CC			= clang++
 
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-NAME		= 
+NAME		= bureaucrat
 
 all			: $(NAME)
 
@@ -24,7 +30,7 @@ $(OBJS_DIR)	:
 			  @mkdir $(OBJS_DIR)
 
 clean		:
-		 	 rm -rf $(OBJS_DIR)
+		 	 rm -rf $(OBJS_DIR) $(wildcard *_shruberry)
 
 fclean		: clean
 		 	 rm -rf $(NAME)

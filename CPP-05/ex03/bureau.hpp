@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 10:54:37 by user42            #+#    #+#             */
-/*   Updated: 2021/07/18 08:48:12 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/18 08:48:23 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@
 # include "ShruberryCreationForm.hpp"
 # include "RobotomyRequestForm.hpp"
 # include "PresidentialPardonForm.hpp"
+# include "Intern.hpp"
 
 #endif
