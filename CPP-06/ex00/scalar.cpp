@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 16:42:30 by user42            #+#    #+#             */
-/*   Updated: 2021/07/19 15:57:29 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/19 16:10:53 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,15 @@ bool	isValid(char* const arg)
 bool	isNan(std::string literal)
 {
 	if (literal == "nan" || literal == "-nan" || literal == "nanf" || literal == "-nanf")
+		return (true);
+	else
+		return (false);
+}
+
+bool	isInf(std::string literal)
+{
+	if (literal == "inf" || literal == "inff" || literal == "-inf" \
+		|| literal == "-inff" || literal == "+inf" || literal == "+inff")
 		return (true);
 	else
 		return (false);

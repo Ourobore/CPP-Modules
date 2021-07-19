@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 14:05:41 by user42            #+#    #+#             */
-/*   Updated: 2021/07/19 15:59:13 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/19 16:27:33 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 
 # define INT_MIN std::numeric_limits<int>::min()
 # define INT_MAX std::numeric_limits<int>::max()
+# define LONG_MIN std::numeric_limits<long int>::min()
+# define LONG_MAX std::numeric_limits<long int>::max()
 # define FLOAT_MIN std::numeric_limits<float>::min()
 # define FLOAT_MAX std::numeric_limits<float>::max()
 # define DOUBLE_MIN std::numeric_limits<double>::min()
@@ -32,5 +34,6 @@ bool	isDouble(char* const arg);
 bool	isCharacter(char* const arg);
 bool	isValid(char* const arg);
 bool	isNan(std::string literal);
+bool	isInf(std::string literal);
 
 #endif
