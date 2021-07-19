@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 16:42:30 by user42            #+#    #+#             */
-/*   Updated: 2021/07/19 10:36:23 by user42           ###   ########.fr       */
+/*   Updated: 2021/07/19 15:57:29 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,31 @@ bool	isDouble(char* const arg)
 		return (false);
 	else
 		return (true);
+}
+
+bool	isValid(char* const arg)
+{
+	std::string const literal = arg;
+
+	if (literal[0] == ' ' || literal[literal.length() - 1] == ' ')
+	{
+		std::cout << "Literal expression is not valid" << std::endl;
+		return (false);
+	}
+
+	else if (!isInteger(arg) && !isFloat(arg) && !isDouble(arg) && !isCharacter(arg))
+	{
+		std::cout << "Wrong literal type: expect <int> <float> <double> and <char>" << std::endl;
+		return (false);
+	}
+
+	return (true);
+}
+
+bool	isNan(std::string literal)
+{
+	if (literal == "nan" || literal == "-nan" || literal == "nanf" || literal == "-nanf")
+		return (true);
+	else
+		return (false);
 }
