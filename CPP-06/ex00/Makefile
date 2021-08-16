@@ -25,7 +25,7 @@ $(OBJS_DIR)	:
 			  @mkdir $(OBJS_DIR)
 
 clean		:
-		 	 rm -rf $(OBJS_DIR) $(wildcard *_shruberry)
+		 	 rm -rf $(OBJS_DIR)
 
 fclean		: clean
 		 	 rm -rf $(NAME)
