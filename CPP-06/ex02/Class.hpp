@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 11:45:27 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/16 11:49:31 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/16 13:38:52 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CLASS_HPP
 
 # include <iostream>
+# include <ctime>
 
 class Base { public: virtual ~Base(void) {} };
 class A: public Base {};
