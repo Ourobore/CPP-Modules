@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 11:43:01 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/16 14:19:45 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/17 10:36:33 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ void	identify(Base* ptr)
 	Base* b = dynamic_cast<B*>(ptr);
 	Base* c = dynamic_cast<C*>(ptr);
 
-	if (!a && !b)
-		std::cout << "C" << std::endl;
-	else if (!b && !c)
+	if (a)
 		std::cout << "A" << std::endl;
-	else if (!c && !a)
+	else if (b)
 		std::cout << "B" << std::endl;
+	else if (c)
+		std::cout << "C" << std::endl;
 }
 
 void	identify(Base& ptr)
