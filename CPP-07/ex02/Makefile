@@ -1,4 +1,4 @@
-SRCS		= main.cpp 
+SRCS		= main.cpp
 
 OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
