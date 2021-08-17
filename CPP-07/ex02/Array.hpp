@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 12:17:22 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/17 12:21:26 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/17 13:42:39 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ template <typename T>
 class Array
 {
 	private:
-		T	_value;
+		T*	_value;
 
 	public:
 		Array(void);
-		Array(T value);
+		Array(unsigned int n);
 		Array(Array const &rhs);
 		Array& operator=(Array const &rhs);
 		~Array(void);
 
-		T getValue(void);
+		T* getValue(void);
 		void setValue(T value);
 };
 

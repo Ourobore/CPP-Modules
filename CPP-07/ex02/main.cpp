@@ -6,13 +6,15 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 12:17:44 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/17 12:18:06 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/17 13:41:56 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "array.hpp"
+#include "Array.hpp"
 
 int main(void)
 {
-	
+	int *a = new int[10];
+	for (int i = 0; i < 10 ; i++)
+		std::cout << a[i] << std::endl;
 }
