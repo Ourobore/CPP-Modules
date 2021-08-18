@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 11:43:01 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/17 10:36:33 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/18 09:21:54 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,18 @@ int	main(void)
 	srand(time(NULL));
 	
 	std::cout << "Random class pointer" << std::endl;
-	identify(generate());
+	Base* randP = generate();
+	identify(randP);
+	delete randP;
 	std::cout << std::endl;
 
 	std::cout << "Random class reference" << std::endl;
-	identify(*generate());
+	Base* randR = generate();
+	identify(*randR);
+	delete randR;
 	std::cout << std::endl;
 
-	std::cout << "Identify A, B and C pointers" << std::endl;
+	std::cout << "Identify A, B and C (pointers)" << std::endl;
 	Base* a = new A;
 	Base* b = new B;
 	Base* c = new C;
@@ -98,7 +102,7 @@ int	main(void)
 	identify(c);
 	std::cout << std::endl;
 	
-	std::cout << "Identify A, B and C references" << std::endl;
+	std::cout << "Identify A, B and C (references)" << std::endl;
 	Base& aa = *a;
 	Base& bb = *b;
 	Base& cc = *c;

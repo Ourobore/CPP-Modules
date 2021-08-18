@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 14:05:01 by user42            #+#    #+#             */
-/*   Updated: 2021/07/19 16:56:19 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/18 09:38:02 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,17 @@ void	printInteger(char* const arg)
 	if (conv <= LONG_MIN || conv >= LONG_MAX)
 	{
 		double biggerConv = strtod(arg, NULL);
-		// Float 
-		std::cout << "float: " << static_cast<float>(biggerConv) << ".0f" << std::endl;
+		// Float
+		if (biggerConv <= FLOAT_MIN || biggerConv >= FLOAT_MAX)
+			std::cout << "float: " << static_cast<float>(biggerConv) << "f" << std::endl;
+		else
+			std::cout << "float: " << static_cast<float>(biggerConv) << ".0f" << std::endl;
 
 		// Double conv
-		std::cout << "double: " << static_cast<double>(biggerConv) << ".0" << std::endl;
+		if (biggerConv <= DOUBLE_MIN || biggerConv >= DOUBLE_MAX)
+			std::cout << "double: " << static_cast<double>(biggerConv) << std::endl;
+		else
+			std::cout << "double: " << static_cast<double>(biggerConv) << ".0" << std::endl;
 	}
 	else
 	{

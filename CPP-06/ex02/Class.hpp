@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Class.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 11:45:27 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/16 13:38:52 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/18 09:20:23 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CLASS_HPP
 
 # include <iostream>
+# include <cstdlib>
 # include <ctime>
 
 class Base { public: virtual ~Base(void) {} };

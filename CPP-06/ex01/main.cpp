@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 10:14:34 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/16 11:29:34 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/18 09:14:58 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "serialize.hpp"
 
-uintptr_t serialize(Data* ptr)
+__intptr_t serialize(Data* ptr)
 {
-	return (reinterpret_cast<uintptr_t>(ptr));
+	return (reinterpret_cast<__intptr_t>(ptr));
 }
 
-Data*	deserialize(uintptr_t raw)
+Data*	deserialize(__intptr_t raw)
 {
 	return (reinterpret_cast<Data*>(raw));
 }
@@ -34,7 +34,7 @@ int	main(void)
 	std::cout << "i: " << before->i << std::endl;
 	std::cout << std::endl;
 
-	uintptr_t raw;
+	__intptr_t raw;
 	raw = serialize(before);
 	
 	std::cout << "Raw value: " << raw << std::endl;

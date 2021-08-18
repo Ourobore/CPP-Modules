@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 14:05:41 by user42            #+#    #+#             */
-/*   Updated: 2021/07/19 16:27:33 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/18 09:41:11 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 
 # include <iostream>
 # include <cstdlib>
-# include <cmath>
 # include <limits>
-# include <iomanip>
 
 # define INT_MIN std::numeric_limits<int>::min()
 # define INT_MAX std::numeric_limits<int>::max()

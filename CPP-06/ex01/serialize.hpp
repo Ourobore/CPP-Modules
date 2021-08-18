@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   serialize.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 10:15:41 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/16 11:27:26 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/18 09:14:38 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SERIALIZE_HPP
 
 # include <iostream>
-# include <cstdint>
+// C++11 # include <cstdint>
 
 typedef struct Data
 {
