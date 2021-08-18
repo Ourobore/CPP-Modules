@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array.hpp                                          :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 14:56:55 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/17 15:22:09 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/18 11:31:15 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ARRAY_HPP
 
 # include <iostream>
+# include "myClass.hpp"
 
 template <typename T>
 class Array
@@ -34,10 +35,10 @@ class Array
 		
 		Array(Array const &rhs)
 		{
-			_size = rhs.getSize();
+			_size = rhs.size();
 			_value = new T[_size];
 			for (unsigned int i = 0; i < _size; i++)
-				_value[i] = rhs.getValue()[i];
+				_value[i] = rhs[i];
 		}
 
 		Array& operator=(Array const &rhs)
@@ -46,18 +47,18 @@ class Array
 			{
 				if (_size)
 					delete[] _value;
-				_size = rhs.getSize();
+				_size = rhs.size();
 				_value = new T[_size];
 				for (unsigned int i = 0; i < _size; i++)
-					_value[i] = rhs.getValue()[i];
+					_value[i] = rhs[i];
 			}
 			return (*this);
 		}
 		
-		T& operator[](int index)
+		T& operator[](int index) const
 		{
 			if (index < 0 || index >= static_cast<int>(_size))
-				throw std::exception();
+				throw std::out_of_range("Index is Out of Range");
 			else
 				return (_value[index]);
 		}
@@ -68,7 +69,7 @@ class Array
 				delete[] _value;
 		}
 
-		unsigned int getSize(void) const
+		unsigned int size(void) const
 		{
 			return (_size);
 		}
@@ -83,5 +84,19 @@ class Array
 			_value = value;
 		}
 };
+
+template <typename T>
+std::ostream& operator<<(std::ostream& o, Array<T> const &rhs)
+{
+	o << "[ " ;
+	for (unsigned int i = 0; i < rhs.size(); i++)
+	{
+		o << rhs[i];
+		if (i != rhs.size() - 1)
+			o << ", ";
+	}
+	o << " ]";
+	return (o);
+}
 
 #endif
