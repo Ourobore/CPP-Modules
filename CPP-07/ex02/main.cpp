@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 12:17:44 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/18 11:38:55 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/18 11:46:17 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,53 +180,4 @@ int main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-	//int *a = new int[10];
-	//for (int i = 0; i < 10 ; i++)
-	//	std::cout << a[i] << std::endl;
-
-	//Array<int> q;
-	Array<int> z(5);
-	
-	for (unsigned int i = 0; i < z.size(); i++)
-		std::cout << z[i] << std::endl;
-	
-	for (unsigned int i = 0; i < z.size(); i++)
-		z.getValue()[i] = i;
-		
-	std::cout << std::endl;
-	for (unsigned int i = 0; i < z.size(); i++)
-		std::cout << z[i] << std::endl;
-	
-	Array<int> a;
-	std::cout << std::endl;
-	for (unsigned int i = 0; i < a.size(); i++)
-		std::cout << a[i] << std::endl;
-
-	a = z;
-	std::cout << std::endl;
-	for (unsigned int i = 0; i < a.size(); i++)
-		std::cout << a[i] << std::endl;
-
-	Array<int> n(a);
-	std::cout << std::endl;
-	for (unsigned int i = 0; i < n.size(); i++)
-		std::cout << n[i] << std::endl;
-
-	std::cout << n[-1] << std::endl;
-	*/
 }
