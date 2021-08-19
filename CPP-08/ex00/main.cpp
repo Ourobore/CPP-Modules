@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 15:15:42 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/19 16:40:32 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/19 16:48:03 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,33 @@ int main(void)
 
 	std::cout << std::endl;
 	std::cout << "easyfind: " << std::endl;
-	std::vector<int>::iterator itvi;
-	itvi = easyfind(v, 38);
-	if (itvi == v.end())
+	std::vector<int>::iterator itv;
+	itv = easyfind(v, 38);
+	if (itv == v.end())
 		std::cout << "easyfind() iterator == end() iterator: element not found" << std::endl;
 	else
-		std::cout << *itvi << std::endl;
+		std::cout << *itv << std::endl;
 
+
+
+	std::cout << std::endl << std::endl;
+	std::cout << "--- <deque> ---" << std::endl;
+	std::deque<int> d;
+	d.push_back(5);
+	d.push_back(13);
+	d.push_front(-2);
+
+	std::cout << "Deque:" << std::endl;
+	for (std::deque<int>::iterator it = d.begin(); it != d.end(); it++)
+        std::cout << *it << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "easyfind: " << std::endl;
+	std::deque<int>::iterator itd;
+	itd = easyfind(d, -2);
+	if (itd == d.end())
+		std::cout << "easyfind() iterator == end() iterator: element not found" << std::endl;
+	else
+		std::cout << *itd << std::endl;
 
 }
