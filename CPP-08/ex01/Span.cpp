@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 10:30:46 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/20 11:59:26 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/20 14:40:03 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,37 @@ Span::~Span(void)
 void	Span::addNumber(int number)
 {
 	if (_array.size() >= _N)
-		throw std::length_error ("Vector is already full");
+		throw std::range_error ("Can't add number: vector is already full");
 	else
 		_array.push_back(number);
+}
+
+void	Span::addNumber(int number, unsigned int range)
+{
+	if (_array.size() + range > _N)
+		throw std::range_error("Can't add number: range too big (int range)");
+	else
+	{
+		for (unsigned int i = 0; i < range; i++)
+			_array.push_back(number);
+	}
+}
+
+void	Span::addNumber(std::vector<int> range)
+{
+	if (_array.size() + range.size() > _N)
+		throw std::range_error ("Can't add number: range too big (iterator range)");
+	else
+		_array.insert(_array.end(), range.begin(), range.end());
 }
 
 unsigned int Span::shortestSpan(void)
 {
 	unsigned int shortSpan = UINT_MAX;
 	
+	if (_array.size() <= 1)
+		throw std::invalid_argument ("One or less element: no shortest span");
+
 	std::vector<int>::iterator itMin;
 	itMin = min_element(_array.begin(), _array.end());
 	
@@ -65,6 +87,9 @@ unsigned int Span::longestSpan(void)
 {
 	unsigned int longSpan = 0;
 
+	if (_array.size() <= 1)
+		throw std::invalid_argument ("One or less element: no longest span");
+		
 	std::vector<int>::iterator itMin;
 	itMin = min_element(_array.begin(), _array.end());
 	
