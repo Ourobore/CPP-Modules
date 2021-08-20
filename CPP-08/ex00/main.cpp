@@ -6,7 +6,7 @@
 /*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 15:15:42 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/19 16:48:03 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/20 10:25:58 by lchapren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,26 @@ int main(void)
 	else
 		std::cout << *itd << std::endl;
 
+
+
+	std::cout << std::endl << std::endl;
+	std::cout << "--- <list> ---" << std::endl;
+	std::list<int> l;
+	l.push_back(89);
+	l.push_back(56);
+	l.push_front(-34);
+	l.push_front(9);
+
+	std::cout << "List:" << std::endl;
+	for (std::list<int>::iterator it = l.begin(); it != l.end(); it++)
+        std::cout << *it << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "easyfind: " << std::endl;
+	std::list<int>::iterator itl;
+	itl = easyfind(l, -2);
+	if (itl == l.end())
+		std::cout << "easyfind() iterator == end() iterator: element not found" << std::endl;
+	else
+		std::cout << *itl << std::endl;
 }
