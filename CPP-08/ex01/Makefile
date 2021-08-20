@@ -1,4 +1,5 @@
-SRCS		= main.cpp
+SRCS		= main.cpp \
+			  Span.cpp
 
 OBJS		= $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 
@@ -10,7 +11,7 @@ CC			= clang++
 
 CPPFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-NAME		= 
+NAME		= span
 
 all			: $(NAME)
 
