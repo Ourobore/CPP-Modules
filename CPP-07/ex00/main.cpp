@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 14:35:24 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/16 15:46:45 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/21 10:32:16 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	main(void)
 	// Values
 	int intA = 42;
 	int intB = -39;
+	int intM = 21;
+	int intN = 21;
 	char charA = 'c';
 	char charB = 'h';
 	float floatA = 81.3f;
@@ -32,6 +34,8 @@ int	main(void)
 	std::cout << "-> int" << std::endl;
 	std::cout << "intA: " << intA << ", intB: " << intB << std::endl;
 	std::cout << "min is: " << ::min(intA, intB) << std::endl;
+	std::cout << "&intM: " << &intM << ", &intN: " << &intN << std::endl;
+	std::cout << "min is: " << &(::min(intM, intN)) << std::endl;
 	std::cout << std::endl;
 
 	std::cout << "-> char" << std::endl;
@@ -62,6 +66,8 @@ int	main(void)
 	std::cout << "-> int" << std::endl;
 	std::cout << "intA: " << intA << ", intB: " << intB << std::endl;
 	std::cout << "max is: " << ::max(intA, intB) << std::endl;
+	std::cout << "&intM: " << &intM << ", &intN: " << &intN << std::endl;
+	std::cout << "max is: " << &(::max(intM, intN)) << std::endl;
 	std::cout << std::endl;
 
 	std::cout << "-> char" << std::endl;
