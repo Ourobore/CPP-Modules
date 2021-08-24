@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 13:53:08 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/12 12:33:49 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/24 11:04:19 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int main()
 {
 	std::cout << "### Make sound test ###" << std::endl;
-	
 	const Animal	*j = new Dog;
 	const Animal	*i = new Cat;
 
@@ -28,62 +27,53 @@ int main()
 	delete i;
 	
 	std::cout << std::endl;
-
 	std::cout << "### Deep Copy test ###" << std::endl;
 	Animal*	x = new Dog();
-	Animal*	y = new Dog(*((Dog*)x));
-	std::string*	modIdeas = new std::string[100];
+	Animal*	y = new Dog(*static_cast<Dog*>(x));
 	
 	std::cout << "x (Dog): "<< x->getType() << std::endl;
 	std::cout << "y (Copy): "<< y->getType() << std::endl;
-	std::cout << "x (Dog* casted): " << ((Dog*)x)->getBrain()->getIdeas()[0] << std::endl;
-	std::cout << "y (Dog* casted): " << ((Dog*)y)->getBrain()->getIdeas()[0] << std::endl;
+	std::cout << "x (Dog* casted): " << static_cast<Dog*>(x)->getBrain()->getIdeas()[0] << std::endl;
+	std::cout << "y (Dog* casted): " <<  static_cast<Dog*>(y)->getBrain()->getIdeas()[0] << std::endl;
 
 	std::cout << std::endl;
 
 	x->setType("Changed");
-	modIdeas[0] = "Just a thought";
-	delete [] ((Dog*)x)->getBrain()->getIdeas();
-	((Dog*)x)->getBrain()->setIdeas(modIdeas);
+	static_cast<Dog*>(x)->getBrain()->getIdeas()[0] = "Just a thought";
 
 	std::cout << "x : "<< x->getType() << std::endl;
 	std::cout << "y : "<< y->getType() << std::endl;
-	std::cout << "x (Dog* casted): " << ((Dog*)x)->getBrain()->getIdeas()[0] << std::endl;
-	std::cout << "y (Dog* casted): " << ((Dog*)y)->getBrain()->getIdeas()[0] << std::endl;
-	
+	std::cout << "x (Dog* casted): " << static_cast<Dog*>(x)->getBrain()->getIdeas()[0] << std::endl;
+	std::cout << "y (Dog* casted): " << static_cast<Dog*>(y)->getBrain()->getIdeas()[0] << std::endl;
+
 	delete x;
 	delete y;
 
-// Demonstration of non deep copy with assignement operator
-// But leaks because you can´t check if an item is already deleted
-/*
-	std::cout << std::endl;
 
+	std::cout << std::endl;
+	std::cout << "### Deep Assignment test ###" << std::endl;
 	Animal* a = new Cat();
 	Animal*	b = new Cat();
-	std::string*	modIdeas2 = new std::string[100];
 
 	std::cout << "a (Cat): "<< a->getType() << std::endl;
 	std::cout << "b (Assignement): "<< b->getType() << std::endl;
-	std::cout << "a (Cat* casted): " << ((Cat*)a)->getBrain()->getIdeas()[0] << std::endl;
-	std::cout << "b (Cat* casted): " << ((Cat*)b)->getBrain()->getIdeas()[0] << std::endl;
+	std::cout << "a (Cat* casted): " << static_cast<Cat*>(a)->getBrain()->getIdeas()[0] << std::endl;
+	std::cout << "b (Cat* casted): " << static_cast<Cat*>(b)->getBrain()->getIdeas()[0] << std::endl;
 
-	delete ((Cat*)b)->getBrain();
-	*((Cat*)b) = *((Cat*)a);
+	*static_cast<Cat*>(b) = *static_cast<Cat*>(a);
 	a->setType("Assign");
-	modIdeas2[0] = "Just another thought";
-	((Cat*)a)->getBrain()->setIdeas(modIdeas2);
+	static_cast<Cat*>(a)->getBrain()->getIdeas()[0] = "Just another thought";
 
 	std::cout << "a (Cat): "<< a->getType() << std::endl;
 	std::cout << "b (Assignement): "<< b->getType() << std::endl;
-	std::cout << "a (Cat* casted): " << ((Cat*)a)->getBrain()->getIdeas()[0] << std::endl;
-	std::cout << "b (Cat* casted): " << ((Cat*)b)->getBrain()->getIdeas()[0] << std::endl;
+	std::cout << "a (Cat* casted): " << static_cast<Cat*>(a)->getBrain()->getIdeas()[0] << std::endl;
+	std::cout << "b (Cat* casted): " << static_cast<Cat*>(b)->getBrain()->getIdeas()[0] << std::endl;
 
 	delete a;
-	//delete b;
-*/
-	std::cout << std::endl;
+	delete b;
 
+
+	std::cout << std::endl;
 	std::cout << "### Animal Array test ###" << std::endl;
 	int nbAnimal = 10;
 	Animal* array[nbAnimal];

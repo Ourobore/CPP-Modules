@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 15:28:25 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/11 18:52:59 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/24 09:56:39 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Brain
 		Brain(void);
 		Brain(Brain const &rhs);
 		Brain& operator=(Brain const &rhs);
-		~Brain(void);
+		virtual ~Brain(void);
 
 		std::string*	getIdeas(void) const;
 		void			setIdeas(std::string *ideas);

@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:09:00 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/12 12:39:23 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/24 09:57:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cat : public AAnimal
 		Cat(void);
 		Cat(Cat const &rhs);
 		Cat& operator=(Cat const &rhs);
-		~Cat(void);
+		virtual ~Cat(void);
 
 		void	makeSound(void) const;
 		Brain*	getBrain(void) const;
