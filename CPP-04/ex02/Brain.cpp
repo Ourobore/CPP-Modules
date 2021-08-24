@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 15:29:29 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/12 12:29:03 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/24 13:37:28 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,12 @@ Brain::Brain(Brain const &rhs) : _ideas(new std::string[100])
 
 Brain&	Brain::operator=(Brain const &rhs)
 {
-	//std::cout << "Assignement overload: Brain" << std::endl;
+	std::cout << "Assignement overload: Brain" << std::endl;
 	if (this != &rhs)
-		this->setIdeas(rhs.getIdeas());
+	{
+		for (int i = 0; i < 100; i++)
+			this->_ideas[i] = rhs._ideas[i];
+	}
 	return (*this);
 }
 

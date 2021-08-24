@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:10:59 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/16 21:05:53 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/24 12:47:39 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Cat& Cat::operator=(Cat const &rhs)
 	if (this != &rhs)
 	{
 		this->setType(rhs.getType());
-		this->_brain = rhs._brain;
+		*(_brain) = *rhs.getBrain();
 	}
 	return (*this);
 }

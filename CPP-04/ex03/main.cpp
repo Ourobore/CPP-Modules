@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:25:43 by user42            #+#    #+#             */
-/*   Updated: 2021/07/17 09:45:02 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/24 13:41:35 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,14 @@ int main()
 	std::cout << std::endl;
 
 	std::cout << "Character copy constructor:" << std::endl;
-	Character* copy = new Character(*((Character*)notme));
+	Character* copy = new Character(*static_cast<Character*>(notme));
 	for (int i = 0; i < 4; i++)
 		notme->use(i, *dummy);
 
 	std::cout << "Character assignation:" << std::endl;
 	for (int i = 0; i < 4; i++)
 		dummy->use(i, *notme);
-	*((Character*)dummy) = *copy;
+	*static_cast<Character*>(dummy) = *copy;
 	for (int i = 0; i < 4; i++)
 		dummy->use(i, *notme);
 

@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 14:32:23 by lchapren          #+#    #+#             */
-/*   Updated: 2021/07/12 12:39:10 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/24 12:48:05 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Dog& Dog::operator=(Dog const &rhs)
 	if (this != &rhs)
 	{
 		this->setType(rhs.getType());
-		this->_brain = rhs._brain;
+		*(_brain) = *rhs.getBrain();
 	}
 	return (*this);
 }

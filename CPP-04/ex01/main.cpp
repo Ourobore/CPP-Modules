@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 13:53:08 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/24 11:04:19 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/24 13:38:36 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int main()
 	std::cout << std::endl;
 	std::cout << "### Deep Copy test ###" << std::endl;
 	Animal*	x = new Dog();
+	static_cast<Dog*>(x)->getBrain()->getIdeas()[0] = "Just a thought";
 	Animal*	y = new Dog(*static_cast<Dog*>(x));
 	
 	std::cout << "x (Dog): "<< x->getType() << std::endl;
@@ -39,7 +40,7 @@ int main()
 	std::cout << std::endl;
 
 	x->setType("Changed");
-	static_cast<Dog*>(x)->getBrain()->getIdeas()[0] = "Just a thought";
+	static_cast<Dog*>(x)->getBrain()->getIdeas()[0] = "Just changed my thought";
 
 	std::cout << "x : "<< x->getType() << std::endl;
 	std::cout << "y : "<< y->getType() << std::endl;
@@ -55,14 +56,17 @@ int main()
 	Animal* a = new Cat();
 	Animal*	b = new Cat();
 
+	static_cast<Cat*>(a)->getBrain()->getIdeas()[0] = "Just another thought";
+	*static_cast<Cat*>(b) = *static_cast<Cat*>(a);
+	
 	std::cout << "a (Cat): "<< a->getType() << std::endl;
 	std::cout << "b (Assignement): "<< b->getType() << std::endl;
 	std::cout << "a (Cat* casted): " << static_cast<Cat*>(a)->getBrain()->getIdeas()[0] << std::endl;
 	std::cout << "b (Cat* casted): " << static_cast<Cat*>(b)->getBrain()->getIdeas()[0] << std::endl;
 
-	*static_cast<Cat*>(b) = *static_cast<Cat*>(a);
+	std::cout << std::endl;
 	a->setType("Assign");
-	static_cast<Cat*>(a)->getBrain()->getIdeas()[0] = "Just another thought";
+	static_cast<Cat*>(a)->getBrain()->getIdeas()[0] = "Just changed to another thought";
 
 	std::cout << "a (Cat): "<< a->getType() << std::endl;
 	std::cout << "b (Assignement): "<< b->getType() << std::endl;
