@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 10:30:58 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/20 15:08:11 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/24 14:44:22 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main(void)
 {
+	srand(time(NULL));
 	Span sp = Span(10);
 
 	std::cout << "--- shortestSpan() and longestSpan() ---" << std::endl;
@@ -49,11 +50,22 @@ int main(void)
 
 
 	////////////////////////////////////////////////////////////////////
-	srand(time(NULL));
 	Span huge(10000);
 	for (int i = 0; i < 10000; i++)
-		huge.addNumber(std::rand() % INT_MAX);
-	std::cout << huge << std::endl;
+		huge.addNumber(std::rand() % 200000 - 100000);
+	//std::cout << huge << std::endl;
+	std::cout << "Shortest span: " << huge.shortestSpan() << std::endl;
+	std::cout << "Longest span: " <<  huge.longestSpan() << std::endl;
+
+	std::cout << std::endl;
+	Span hugehuge(100000);
+	for (int i = 0; i < 100000; i++)
+		hugehuge.addNumber(std::rand() % 2000000 - 1000000);
+	//std::cout << hugehuge << std::endl;
+	std::cout << "Shortest span: " << hugehuge.shortestSpan() << std::endl;
+	std::cout << "Longest span: " <<  hugehuge.longestSpan() << std::endl;
+
+
 
 	////////////////////////////////////////////////////////////////////
 	std::cout << std::endl << std::endl;

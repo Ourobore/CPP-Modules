@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 10:30:46 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/20 14:40:03 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/24 14:36:33 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,12 +100,12 @@ unsigned int Span::longestSpan(void)
 	return (longSpan);
 }
 
-std::vector<int> Span::getArray(void) const
+std::vector<int>& Span::getArray(void)
 {
 	return (_array);
 }
 
-std::ostream& operator<<(std::ostream& o, Span const &rhs)
+std::ostream& operator<<(std::ostream& o, Span &rhs)
 {
 	o << "(" << rhs.getArray().size() << "): ";
 	o << "[ ";

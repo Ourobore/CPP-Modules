@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 10:30:18 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/20 14:56:40 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/24 14:34:35 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ class Span
 		unsigned int shortestSpan(void);
 		unsigned int longestSpan(void);
 
-		std::vector<int> getArray(void) const;
+		std::vector<int>& getArray(void);
 };
 
-std::ostream& operator<<(std::ostream& o, Span const &rhs);
+std::ostream& operator<<(std::ostream& o, Span &rhs);
 
 #endif
