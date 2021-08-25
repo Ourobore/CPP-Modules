@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchapren <lchapren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 13:37:22 by lchapren          #+#    #+#             */
-/*   Updated: 2021/08/20 10:26:29 by lchapren         ###   ########.fr       */
+/*   Updated: 2021/08/25 10:28:25 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define EASYFIND_HPP
 
 # include <iostream>
+# include <algorithm>
 # include <vector>
 # include <deque>
 # include <list>

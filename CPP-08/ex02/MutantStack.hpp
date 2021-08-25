@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 14:54:22 by user42            #+#    #+#             */
-/*   Updated: 2021/08/24 18:07:44 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/25 09:19:18 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <stack>
 # include <deque>
+# include <list>
 
 template <typename T>
 class MutantStack : public std::stack<T>
