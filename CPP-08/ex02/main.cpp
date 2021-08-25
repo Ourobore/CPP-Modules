@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 14:54:25 by user42            #+#    #+#             */
-/*   Updated: 2021/08/25 10:25:09 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/25 10:48:50 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,10 +117,59 @@ int main(void)
 	
 
 	std::cout << std::endl << std::endl;
+	std::cout << "--- Assignation and copy ---" << std::endl;
+	MutantStack<int> copy(ms);
+	MutantStack<int> assign;
+
+	assign = copy;
+	std::cout << "Copy: " << copy << std::endl;
+	std::cout << "Assignation: " << assign << std::endl;
+
+
+
+	std::cout << std::endl << std::endl;
 	std::cout << "--- top() and pop() ---" << std::endl;
 	while (!ms.empty())
 	{
 		std::cout << ms.top() << std::endl;
 		ms.pop();
+	}
+
+
+
+	std::cout << std::endl << std::endl;
+	std::cout << "--- std::string ---" << std::endl;
+	MutantStack<std::string> sm;
+	sm.push("This");
+	sm.push("is");
+	sm.push("not");
+	sm.push("a");
+	sm.push("test");
+	std::cout << sm << std::endl;
+
+	std::cout << std::endl;
+	while (!sm.empty())
+	{
+		std::cout << sm.top() << std::endl;
+		sm.pop();
+	}
+
+
+
+	std::cout << std::endl << std::endl;
+	std::cout << "--- myClass ---" << std::endl;
+	MutantStack<myClass> mym;
+	mym.push(myClass(2));
+	mym.push(myClass(4));
+	mym.push(myClass(8));
+	mym.push(myClass(16));
+	mym.push(myClass(32));
+	std::cout << mym << std::endl;
+
+	std::cout << std::endl;
+	while (!mym.empty())
+	{
+		std::cout << mym.top() << std::endl;
+		mym.pop();
 	}
 }

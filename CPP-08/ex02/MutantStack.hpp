@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 14:54:22 by user42            #+#    #+#             */
-/*   Updated: 2021/08/25 09:19:18 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/25 10:47:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 # include <stack>
 # include <deque>
 # include <list>
+# include "myClass.hpp"
 
 template <typename T>
 class MutantStack : public std::stack<T>
 {
 	public:
 		MutantStack(void) : std::stack<T>() {};
-		MutantStack(MutantStack const &rhs) : std::stack<T>() { *this != rhs; };
+		MutantStack(MutantStack const &rhs) : std::stack<T>() { *this = rhs; };
 		MutantStack& operator=(MutantStack const &rhs)
 		{
 			if (this != &rhs)
